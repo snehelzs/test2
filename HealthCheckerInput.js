@@ -16,7 +16,7 @@ import CircularProgress from '@mui/material/CircularProgress';
 import Backdrop from '@mui/material/Backdrop';
 import { styled, useTheme } from '@mui/material/styles';
 import { useDispatch } from 'react-redux';
-import { setCurrentTab } from '../../feature/tabSlice';
+import { setCurrentTab, setHealthCheckerResult } from '../../feature/tabSlice';
 import { postHealthCheckerData } from '../api/getHealthCheck'
 
 const ContentBox = styled(Box)(({ theme }) => ({
@@ -96,8 +96,11 @@ const Content = () => {
       setLoadingText('Submitting your request...');
 
       try {
-        const result = await postHealthCheckerData(selectedDataSources, selectedTestCases);
+        const selectedSources= dataSourcesOptions.filter(option => selectedDataSources.includes(option.value)).map(option => option.label);
+        const selectedTestcase= testCasesOptions.filter(option => selectedTestCases.includes(option.value)).map(option => option.label);
+        const result = await postHealthCheckerData(selectedSources, selectedTestcase);
         console.log('API Response:', result);
+        dispatch(setHealthCheckerResult(result))
         setLoadingText('Processing complete.');
         setTimeout(() => {
           setIsLoading(false);
@@ -178,7 +181,7 @@ const Content = () => {
                     {dataSourcesOptions.map(option => (
                       <MenuItem
                         key={option.value}
-                        value={option.label}
+                        value={option.value}
                         sx={{
                           fontSize: '1.5rem',
                           color: 'black',
@@ -288,7 +291,7 @@ const Content = () => {
                     {testCasesOptions.map(option => (
                       <MenuItem
                         key={option.value}
-                        value={option.label}
+                        value={option.value}
                         sx={{
                           fontSize: '1.5rem',
                           color: 'black',
