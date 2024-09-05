@@ -304,10 +304,11 @@ export default function HealthSummary() {
   };
   
 
-  const handleViewDetails = (row) => {
-    setSelectedTestCase(row);
+  const handleViewDetails = (details, testType, testId) => {
+    setSelectedTestCase({ details, testType, testId });
     setOpenModal(true);
   };
+  
 
   const handleCloseModal = () => {
     setOpenModal(false);
@@ -511,7 +512,6 @@ export default function HealthSummary() {
                       </TableSortLabel>
                     </TableHeaderCell>
                     <TableHeaderCell>Details</TableHeaderCell>
-                    <TableHeaderCell>Actions</TableHeaderCell>
                   </TableRow>
                 </TableHead>
                 <TableBody>
@@ -529,9 +529,8 @@ export default function HealthSummary() {
                         <StyledTableCell>{row.threshold}</StyledTableCell>
                         <StyledTableCell>{row.number_of_errors}</StyledTableCell>
                         <ResultCell result={row.result}>{row.result}</ResultCell>
-                        <StyledTableCell>details</StyledTableCell>
                         <StyledTableCell>
-                          <IconButton onClick={() => handleViewDetails(row)} color="primary">
+                          <IconButton onClick={() => handleViewDetails(row.details, row.test_type, row.test_id)} color="primary">
                             <VisibilityIcon />
                           </IconButton>
                         </StyledTableCell>
