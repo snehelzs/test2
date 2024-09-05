@@ -1,387 +1,417 @@
 [
-  {
-    "DVE_run_date": "2024-09-05",
-    "data_source": "dbo",
-    "details": [
-      {
-        "DataSource": "dbo",
-        "Error Flag": 0,
-        "Table Exists": true,
-        "TableName": "claimCodeDetail",
-        "TestCaseID": "HC_AC_001"
-      },
-      {
-        "DataSource": "dbo",
-        "Error Flag": 0,
-        "Table Exists": true,
-        "TableName": "claimInstitutionalDetail",
-        "TestCaseID": "HC_AC_002"
-      },
-      {
-        "DataSource": "dbo",
-        "Error Flag": 0,
-        "Table Exists": true,
-        "TableName": "claim",
-        "TestCaseID": "HC_AC_003"
-      },
-      {
-        "DataSource": "dbo",
-        "Error Flag": 0,
-        "Table Exists": true,
-        "TableName": "claimMemberDetail",
-        "TestCaseID": "HC_AC_004"
-      },
-      {
-        "DataSource": "dbo",
-        "Error Flag": 0,
-        "Table Exists": true,
-        "TableName": "ClaimLineItemDetail",
-        "TestCaseID": "HC_AC_005"
-      },
-      {
-        "DataSource": "dbo",
-        "Error Flag": 0,
-        "Table Exists": true,
-        "TableName": "claimProviderDetail",
-        "TestCaseID": "HC_AC_006"
-      },
-      {
-        "DataSource": "dbo",
-        "Error Flag": 0,
-        "Table Exists": true,
-        "TableName": "claimPayment",
-        "TestCaseID": "HC_AC_007"
-      },
-      {
-        "DataSource": "dbo",
-        "Error Flag": 0,
-        "Table Exists": true,
-        "TableName": "StatusCode",
-        "TestCaseID": "HC_AC_008"
-      }
-    ],
-    "number_of_errors": 0,
-    "result": "Pass",
-    "test_desc": "Number of required tables not available",
-    "test_id": "TC001",
-    "test_type": "Data Availability Check",
-    "threshold": 0
-  },
-  {
-    "DVE_run_date": "2024-09-05",
-    "data_source": "dbo",
-    "details": [
-      {
-        "Column": "ClaimCodeDetailID",
-        "Current Data Type": "bigint",
-        "Data Source": "dbo",
-        "Error Flag": 0,
-        "Expected Data Type": "bigint",
-        "Table": "claimCodeDetail",
-        "TestCaseID": "HC_AC_001"
-      },
-      {
-        "Column": "ClaimID",
-        "Current Data Type": "bigint",
-        "Data Source": "dbo",
-        "Error Flag": 0,
-        "Expected Data Type": "bigint",
-        "Table": "claimCodeDetail",
-        "TestCaseID": "HC_AC_002"
-      },
-      {
-        "Column": "ClaimCodeTypeID",
-        "Current Data Type": "bigint",
-        "Data Source": "dbo",
-        "Error Flag": 0,
-        "Expected Data Type": "bigint",
-        "Table": "claimCodeDetail",
-        "TestCaseID": "HC_AC_003"
-      },
-      {
-        "Column": "CodeNumber",
-        "Current Data Type": "varchar",
-        "Data Source": "dbo",
-        "Error Flag": 0,
-        "Expected Data Type": "varchar",
-        "Table": "claimCodeDetail",
-        "TestCaseID": "HC_AC_004"
-      },
-      {
-        "Column": "RowState",
-        "Current Data Type": "char",
-        "Data Source": "dbo",
-        "Error Flag": 0,
-        "Expected Data Type": "char",
-        "Table": "claimCodeDetail",
-        "TestCaseID": "HC_AC_005"
-      },
-      {
-        "Column": "ClaimID",
-        "Current Data Type": "bigint",
-        "Data Source": "dbo",
-        "Error Flag": 0,
-        "Expected Data Type": "bigint",
-        "Table": "ClaimLineItemDetail",
-        "TestCaseID": "HC_AC_006"
-      },
-      {
-        "Column": "ClaimLineItemNumber",
-        "Current Data Type": "bigint",
-        "Data Source": "dbo",
-        "Error Flag": 0,
-        "Expected Data Type": "bigint",
-        "Table": "ClaimLineItemDetail",
-        "TestCaseID": "HC_AC_007"
-      }
-    ],
-    "number_of_errors": 0,
-    "result": "Pass",
-    "test_desc": "Number of columns not in expected format",
-    "test_id": "TC002",
-    "test_type": "Table Schema Check",
-    "threshold": 0
-  },
-  {
-    "DVE_run_date": "2024-09-05",
-    "data_source": "dbo",
-    "details": [
-      {
-        "Error Flag": 0,
-        "column": "ClaimID",
-        "comparision": "% of null records",
-        "details": {
-          "ColumnName": "ClaimID",
+    {
+      "DVE_run_date": "2024-09-05",
+      "data_source": "dbo",
+      "details": [
+        {
           "DataSource": "dbo",
           "Error Flag": 0,
-          "Null Rows": 0,
-          "Percentage": "0.00%",
-          "TableName": "ClaimCodeDetail",
-          "Total rows": 9135274
+          "Table Exists": "Yes",
+          "TableName": "claimCodeDetail",
+          "TestCaseID": "HC_AC_001",
+          "date": "2024-09-05"
         },
-        "run_date": "2024-09-05",
-        "source": "dbo",
-        "table": "ClaimCodeDetail",
-        "test_id": "TC003.02"
-      },
-      {
-        "Error Flag": 1,
-        "column": "DOSTo",
-        "comparision": "NaN",
-        "details": {
-          "ColumnName": "DOSTo",
+        {
           "DataSource": "dbo",
-          "Error Flag": 1,
-          "Invalid Rows": 138,
-          "Percentage": "0.00%",
+          "Error Flag": 0,
+          "Table Exists": "Yes",
+          "TableName": "claimInstitutionalDetail",
+          "TestCaseID": "HC_AC_002",
+          "date": "2024-09-05"
+        },
+        {
+          "DataSource": "dbo",
+          "Error Flag": 0,
+          "Table Exists": "Yes",
+          "TableName": "claim",
+          "TestCaseID": "HC_AC_003",
+          "date": "2024-09-05"
+        },
+        {
+          "DataSource": "dbo",
+          "Error Flag": 0,
+          "Table Exists": "Yes",
+          "TableName": "claimMemberDetail",
+          "TestCaseID": "HC_AC_004",
+          "date": "2024-09-05"
+        },
+        {
+          "DataSource": "dbo",
+          "Error Flag": 0,
+          "Table Exists": "Yes",
           "TableName": "ClaimLineItemDetail",
-          "Total rows": 5362763
+          "TestCaseID": "HC_AC_005",
+          "date": "2024-09-05"
         },
-        "run_date": "2024-09-05",
-        "source": "dbo",
-        "table": "ClaimLineItemDetail",
-        "test_id": "TC003.03"
-      },
-      {
-        "Error Flag": 1,
-        "column": "ClaimID",
-        "comparision": "NaN",
-        "details": {
-          "ColumnName": "ClaimID",
+        {
           "DataSource": "dbo",
-          "Distinct Values": 1569500,
-          "Duplicate Rows": 7565774,
-          "Error Flag": 1,
-          "TableName": "ClaimCodeDetail",
-          "Total rows": 9135274
+          "Error Flag": 0,
+          "Table Exists": "Yes",
+          "TableName": "claimProviderDetail",
+          "TestCaseID": "HC_AC_006",
+          "date": "2024-09-05"
         },
-        "run_date": "2024-09-05",
-        "source": "dbo",
-        "table": "ClaimCodeDetail",
-        "test_id": "TC003.04"
-      },
-      {
-        "Error Flag": 1,
-        "column": "PlaceOfService",
-        "comparision": "NaN",
-        "details": {
-          "ColumnName": "PlaceOfService",
+        {
           "DataSource": "dbo",
-          "Error Flag": 1,
-          "Out-of-universe Rows": 856840,
-          "Percentage": "15.98%",
-          "TableName": "ClaimLineItemDetail",
-          "Total rows": 5362763
+          "Error Flag": 0,
+          "Table Exists": "Yes",
+          "TableName": "claimPayment",
+          "TestCaseID": "HC_AC_007",
+          "date": "2024-09-05"
         },
-        "run_date": "2024-09-05",
-        "source": "dbo",
-        "table": "ClaimLineItemDetail",
-        "test_id": "TC003.05"
-      },
-      {
-        "Error Flag": 1,
-        "column": "PlaceOfService",
-        "comparision": "% of null records",
-        "details": {
-          "ColumnName": "PlaceOfService",
+        {
           "DataSource": "dbo",
-          "Error Flag": 1,
-          "Null Rows": 14,
-          "Percentage": "0.00%",
-          "TableName": "ClaimLineItemDetail",
-          "Total rows": 5362763
+          "Error Flag": 0,
+          "Table Exists": "Yes",
+          "TableName": "StatusCode",
+          "TestCaseID": "HC_AC_008",
+          "date": "2024-09-05"
+        }
+      ],
+      "number_of_errors": 0,
+      "result": "Pass",
+      "test_desc": "Number of required tables not available",
+      "test_id": "TC001",
+      "test_type": "Data Availability Check",
+      "threshold": 0
+    },
+    {
+      "DVE_run_date": "2024-09-05",
+      "data_source": "dbo",
+      "details": [
+        {
+          "Column": "ClaimCodeDetailID",
+          "Current Data Type": "bigint",
+          "Data Source": "dbo",
+          "Error Flag": 0,
+          "Expected Data Type": "bigint",
+          "Table": "claimCodeDetail",
+          "TestCaseID": "HC_AC_001",
+          "date": "2024-09-05"
         },
-        "run_date": "2024-09-05",
-        "source": "dbo",
-        "table": "ClaimLineItemDetail",
-        "test_id": "TC003.06"
-      },
-      {
-        "Error Flag": 1,
-        "column": "DOSTo",
-        "comparision": "NaN",
-        "details": {
-          "ColumnName": "DOSTo",
-          "DataSource": "dbo",
-          "Error Flag": 1,
-          "Invalid Rows": 159,
-          "Percentage": "0.00%",
-          "TableName": "ClaimLineItemDetail",
-          "Total rows": 5362763
+        {
+          "Column": "ClaimID",
+          "Current Data Type": "bigint",
+          "Data Source": "dbo",
+          "Error Flag": 0,
+          "Expected Data Type": "bigint",
+          "Table": "claimCodeDetail",
+          "TestCaseID": "HC_AC_002",
+          "date": "2024-09-05"
         },
-        "run_date": "2024-09-05",
-        "source": "dbo",
-        "table": "ClaimLineItemDetail",
-        "test_id": "TC003.08"
-      }
-    ],
-    "number_of_errors": 5,
-    "result": "Fail",
-    "test_desc": "Number of columns with inconsistent or incorrect values",
-    "test_id": "TC003",
-    "test_type": "Column Value Consistency Check",
-    "threshold": 0
-  },
-  {
-    "DVE_run_date": "2024-09-05",
-    "data_source": "LWCC",
-    "details": [
-      {
-        "DataSource": "LWCC",
-        "Error Flag": 0,
-        "Table Exists": true,
-        "TableName": "billing",
-        "TestCaseID": "HC_AC_009"
-      },
-      {
-        "DataSource": "LWCC",
-        "Error Flag": 0,
-        "Table Exists": true,
-        "TableName": "billing",
-        "TestCaseID": "HC_AC_010"
-      },
-      {
-        "DataSource": "LWCC",
-        "Error Flag": 0,
-        "Table Exists": true,
-        "TableName": "facility",
-        "TestCaseID": "HC_AC_011"
-      },
-      {
-        "DataSource": "LWCC",
-        "Error Flag": 0,
-        "Table Exists": true,
-        "TableName": "lists",
-        "TestCaseID": "HC_AC_012"
-      },
-      {
-        "DataSource": "LWCC",
-        "Error Flag": 0,
-        "Table Exists": true,
-        "TableName": "procedure_report",
-        "TestCaseID": "HC_AC_013"
-      },
-      {
-        "DataSource": "LWCC",
-        "Error Flag": 0,
-        "Table Exists": true,
-        "TableName": "procedure_result",
-        "TestCaseID": "HC_AC_014"
-      },
-      {
-        "DataSource": "LWCC",
-        "Error Flag": 1,
-        "Table Exists": false,
-        "TableName": "fake_table",
-        "TestCaseID": "HC_AC_015"
-      }
-    ],
-    "number_of_errors": 1,
-    "result": "Fail",
-    "test_desc": "Number of required tables not available",
-    "test_id": "TC004",
-    "test_type": "Data Availability Check",
-    "threshold": 0
-  },
-  {
-    "DVE_run_date": "2024-09-05",
-    "data_source": "LWCC",
-    "details": [],
-    "number_of_errors": 0,
-    "result": "Pass",
-    "test_desc": "Number of columns not in expected format",
-    "test_id": "TC005",
-    "test_type": "Table Schema Check",
-    "threshold": 0
-  },
-  {
-    "DVE_run_date": "2024-09-05",
-    "data_source": "LWCC",
-    "details": [
-      {
-        "Error Flag": 1,
-        "column": "sex",
-        "comparision": "NaN",
-        "details": {
-          "ColumnName": "sex",
+        {
+          "Column": "ClaimCodeTypeID",
+          "Current Data Type": "bigint",
+          "Data Source": "dbo",
+          "Error Flag": 0,
+          "Expected Data Type": "bigint",
+          "Table": "claimCodeDetail",
+          "TestCaseID": "HC_AC_003",
+          "date": "2024-09-05"
+        },
+        {
+          "Column": "CodeNumber",
+          "Current Data Type": "varchar",
+          "Data Source": "dbo",
+          "Error Flag": 0,
+          "Expected Data Type": "varchar",
+          "Table": "claimCodeDetail",
+          "TestCaseID": "HC_AC_004",
+          "date": "2024-09-05"
+        },
+        {
+          "Column": "RowState",
+          "Current Data Type": "char",
+          "Data Source": "dbo",
+          "Error Flag": 0,
+          "Expected Data Type": "char",
+          "Table": "claimCodeDetail",
+          "TestCaseID": "HC_AC_005",
+          "date": "2024-09-05"
+        },
+        {
+          "Column": "ClaimID",
+          "Current Data Type": "bigint",
+          "Data Source": "dbo",
+          "Error Flag": 0,
+          "Expected Data Type": "bigint",
+          "Table": "ClaimLineItemDetail",
+          "TestCaseID": "HC_AC_006",
+          "date": "2024-09-05"
+        },
+        {
+          "Column": "ClaimLineItemNumber",
+          "Current Data Type": "bigint",
+          "Data Source": "dbo",
+          "Error Flag": 0,
+          "Expected Data Type": "bigint",
+          "Table": "ClaimLineItemDetail",
+          "TestCaseID": "HC_AC_007",
+          "date": "2024-09-05"
+        }
+      ],
+      "number_of_errors": 0,
+      "result": "Pass",
+      "test_desc": "Number of columns not in expected format",
+      "test_id": "TC002",
+      "test_type": "Table Schema Check",
+      "threshold": 0
+    },
+    {
+      "DVE_run_date": "2024-09-05",
+      "data_source": "dbo",
+      "details": [
+        {
+          "Error Flag": 0,
+          "column": "ClaimID",
+          "comparision": "null check",
+          "details": {
+            "ColumnName": "ClaimID",
+            "DataSource": "dbo",
+            "Error Flag": 0,
+            "Null Rows": 0,
+            "Percentage": "0.00%",
+            "TableName": "ClaimCodeDetail",
+            "Total rows": 9135274
+          },
+          "run_date": "2024-09-05",
+          "source": "dbo",
+          "table": "ClaimCodeDetail",
+          "test_id": "TC003.01",
+          "test_type": "Null_Check"
+        },
+        {
+          "Error Flag": 1,
+          "column": "DOSTo",
+          "comparision": "invalid date check",
+          "details": {
+            "ColumnName": "DOSTo",
+            "DataSource": "dbo",
+            "Error Flag": 1,
+            "Invalid Rows": 138,
+            "Percentage": "0.00%",
+            "TableName": "ClaimLineItemDetail",
+            "Total rows": 5362763
+          },
+          "run_date": "2024-09-05",
+          "source": "dbo",
+          "table": "ClaimLineItemDetail",
+          "test_id": "TC003.02",
+          "test_type": "Invalid_Date_Check"
+        },
+        {
+          "Error Flag": 1,
+          "column": "ClaimID",
+          "comparision": "duplicate check",
+          "details": {
+            "ColumnName": "ClaimID",
+            "DataSource": "dbo",
+            "Distinct Values": 1569500,
+            "Duplicate Rows": 7565774,
+            "Error Flag": 1,
+            "TableName": "ClaimCodeDetail",
+            "Total rows": 9135274
+          },
+          "run_date": "2024-09-05",
+          "source": "dbo",
+          "table": "ClaimCodeDetail",
+          "test_id": "TC003.03",
+          "test_type": "Duplicate_Check"
+        },
+        {
+          "Error Flag": 1,
+          "column": "PlaceOfService",
+          "comparision": "universe check",
+          "details": {
+            "ColumnName": "PlaceOfService",
+            "DataSource": "dbo",
+            "Error Flag": 1,
+            "Out-of-universe Rows": 856840,
+            "Percentage": "15.98%",
+            "TableName": "ClaimLineItemDetail",
+            "Total rows": 5362763
+          },
+          "run_date": "2024-09-05",
+          "source": "dbo",
+          "table": "ClaimLineItemDetail",
+          "test_id": "TC003.04",
+          "test_type": "Universe_Check"
+        },
+        {
+          "Error Flag": 1,
+          "column": "PlaceOfService",
+          "comparision": "null check",
+          "details": {
+            "ColumnName": "PlaceOfService",
+            "DataSource": "dbo",
+            "Error Flag": 1,
+            "Null Rows": 14,
+            "Percentage": "0.00%",
+            "TableName": "ClaimLineItemDetail",
+            "Total rows": 5362763
+          },
+          "run_date": "2024-09-05",
+          "source": "dbo",
+          "table": "ClaimLineItemDetail",
+          "test_id": "TC003.05",
+          "test_type": "Null_Check"
+        },
+        {
+          "Error Flag": 1,
+          "column": "DOSTo",
+          "comparision": "date format check",
+          "details": {
+            "ColumnName": "DOSTo",
+            "DataSource": "dbo",
+            "Error Flag": 1,
+            "Invalid Rows": 159,
+            "Percentage": "0.00%",
+            "TableName": "ClaimLineItemDetail",
+            "Total rows": 5362763
+          },
+          "run_date": "2024-09-05",
+          "source": "dbo",
+          "table": "ClaimLineItemDetail",
+          "test_id": "TC003.06",
+          "test_type": "Date_Format_Check"
+        }
+      ],
+      "number_of_errors": 5,
+      "result": "Fail",
+      "test_desc": "Number of columns with inconsistent or incorrect values",
+      "test_id": "TC003",
+      "test_type": "Column Value Consistency Check",
+      "threshold": 0
+    },
+    {
+      "DVE_run_date": "2024-09-05",
+      "data_source": "LWCC",
+      "details": [
+        {
+          "DataSource": "LWCC",
+          "Error Flag": 0,
+          "Table Exists": "Yes",
+          "TableName": "billing",
+          "TestCaseID": "HC_AC_009",
+          "date": "2024-09-05"
+        },
+        {
+          "DataSource": "LWCC",
+          "Error Flag": 0,
+          "Table Exists": "Yes",
+          "TableName": "billing",
+          "TestCaseID": "HC_AC_010",
+          "date": "2024-09-05"
+        },
+        {
+          "DataSource": "LWCC",
+          "Error Flag": 0,
+          "Table Exists": "Yes",
+          "TableName": "facility",
+          "TestCaseID": "HC_AC_011",
+          "date": "2024-09-05"
+        },
+        {
+          "DataSource": "LWCC",
+          "Error Flag": 0,
+          "Table Exists": "Yes",
+          "TableName": "lists",
+          "TestCaseID": "HC_AC_012",
+          "date": "2024-09-05"
+        },
+        {
+          "DataSource": "LWCC",
+          "Error Flag": 0,
+          "Table Exists": "Yes",
+          "TableName": "procedure_report",
+          "TestCaseID": "HC_AC_013",
+          "date": "2024-09-05"
+        },
+        {
+          "DataSource": "LWCC",
+          "Error Flag": 0,
+          "Table Exists": "Yes",
+          "TableName": "procedure_result",
+          "TestCaseID": "HC_AC_014",
+          "date": "2024-09-05"
+        },
+        {
           "DataSource": "LWCC",
           "Error Flag": 1,
-          "Out-of-universe Rows": 13437,
-          "Percentage": "100.00%",
-          "TableName": "patient_data",
-          "Total rows": 13437
-        },
-        "run_date": "2024-09-05",
-        "source": "LWCC",
-        "table": "patient_data",
-        "test_id": "TC006.01"
-      },
-      {
-        "Error Flag": 1,
-        "column": "DOB",
-        "comparision": "NaN",
-        "details": {
-          "CheckColumnName": "DOS",
-          "CheckTableName": "HXGClaims",
-          "ColumnName": "DOB",
-          "DataSource": "LWCC",
+          "Table Exists": "No",
+          "TableName": "fake_table",
+          "TestCaseID": "HC_AC_015",
+          "date": "2024-09-05"
+        }
+      ],
+      "number_of_errors": 1,
+      "result": "Fail",
+      "test_desc": "Number of required tables not available",
+      "test_id": "TC004",
+      "test_type": "Data Availability Check",
+      "threshold": 0
+    },
+    {
+      "DVE_run_date": "2024-09-05",
+      "data_source": "LWCC",
+      "details": [],
+      "number_of_errors": 0,
+      "result": "Pass",
+      "test_desc": "Number of columns not in expected format",
+      "test_id": "TC005",
+      "test_type": "Table Schema Check",
+      "threshold": 0
+    },
+    {
+      "DVE_run_date": "2024-09-05",
+      "data_source": "LWCC",
+      "details": [
+        {
           "Error Flag": 1,
-          "Future Date Member IDs": 0,
-          "Member Percentage": "0.00%",
-          "TableName": "patient_data",
-          "Total Unique Member IDs": 13437
+          "column": "sex",
+          "comparision": "universe check",
+          "details": {
+            "ColumnName": "sex",
+            "DataSource": "LWCC",
+            "Error Flag": 1,
+            "Out-of-universe Rows": 13437,
+            "Percentage": "100.00%",
+            "TableName": "patient_data",
+            "Total rows": 13437
+          },
+          "run_date": "2024-09-05",
+          "source": "LWCC",
+          "table": "patient_data",
+          "test_id": "TC006.01",
+          "test_type": "Universe_Check"
         },
-        "run_date": "2024-09-05",
-        "source": "LWCC",
-        "table": "patient_data",
-        "test_id": "TC006.07"
-      }
-    ],
-    "number_of_errors": 2,
-    "result": "Fail",
-    "test_desc": "Number of columns with inconsistent or incorrect values",
-    "test_id": "TC006",
-    "test_type": "Column Value Consistency Check",
-    "threshold": 0
-  }
-]
+        {
+          "Error Flag": 1,
+          "column": "DOB",
+          "comparision": "future date check",
+          "details": {
+            "CheckColumnName": "DOS",
+            "CheckTableName": "HXGClaims",
+            "ColumnName": "DOB",
+            "DataSource": "LWCC",
+            "Error Flag": 1,
+            "Future Date Member IDs": 0,
+            "Member Percentage": "0.00%",
+            "TableName": "patient_data",
+            "Total Unique Member IDs": 13437
+          },
+          "run_date": "2024-09-05",
+          "source": "LWCC",
+          "table": "patient_data",
+          "test_id": "TC006.02",
+          "test_type": "Future_Date_Check"
+        }
+      ],
+      "number_of_errors": 2,
+      "result": "Fail",
+      "test_desc": "Number of columns with inconsistent or incorrect values",
+      "test_id": "TC006",
+      "test_type": "Column Value Consistency Check",
+      "threshold": 0
+    }
+  ]
