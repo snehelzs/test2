@@ -1,7 +1,8 @@
 import React from 'react';
 import { Dialog, DialogTitle, DialogContent, DialogActions, Typography, Button, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, IconButton } from '@mui/material';
 import DownloadIcon from '@mui/icons-material/Download';
-import CloseIcon from '@mui/icons-material/Close';
+import VisibilityIcon from '@mui/icons-material/Visibility'; // Add import for VisibilityIcon
+import DetailedTestCaseModal from '../ModalView/DetailedTestCaseModal';
 import { styled } from '@mui/material/styles';
 
 const CustomButton = styled(Button)(({ theme }) => ({
@@ -14,45 +15,61 @@ const CustomButton = styled(Button)(({ theme }) => ({
 }));
 
 const CustomTableCell = styled(TableCell)(({ theme, header, icon }) => ({
-    fontFamily: 'Arial Black, Arial, sans-serif',
-    fontSize: header ? '1.25rem' : '1rem',
-    wordBreak: 'break-word',
-    whiteSpace: 'nowrap',
-    backgroundColor: header ? '#e0f7fa' : 'inherit',
-    fontWeight: header ? 'bold' : 'normal',
-    display: icon ? 'flex' : 'table-cell', // Adjust display based on icon prop
-    alignItems: 'center', // Center icon vertically
-    justifyContent: icon ? 'center' : 'initial', // Center icon horizontally
-    cursor: icon ? 'pointer' : 'initial', // Change cursor if icon present
-  }));
+  fontFamily: 'Arial Black, Arial, sans-serif',
+  fontSize: header ? '1.25rem' : '1rem',
+  wordBreak: 'break-word',
+  whiteSpace: 'nowrap',
+  backgroundColor: header ? '#e0f7fa' : 'inherit',
+  fontWeight: header ? 'bold' : 'normal',
+  display: icon ? 'flex' : 'table-cell', // Adjust display based on icon prop
+  alignItems: 'center', // Center icon vertically
+  justifyContent: icon ? 'center' : 'initial', // Center icon horizontally
+  cursor: icon ? 'pointer' : 'initial', // Change cursor if icon present
+}));
 
-const DetailedTestCaseModal = ({ open, onClose, testCase }) => {
-  const { details, testId } = testCase;
-  console.log("Nested Screen", testCase)
-
+const TestCaseModal = ({ open, onClose, testCase }) => {
+  const details  = testCase.Description; // Default to empty array if details is undefined 
+  // Determine headers based on test_type
+  console.log("In Nested Details", testCase)
   const getHeaders = () => {
-    // switch (testCase.testType) 
-    {
-    //   case 'Data Availability Check':
-        return ['ColumnName', 'DataSource', 'Error Flag', 'Null Rows', 'Percentage', 'TableName', 'Total Rows'];
-    //   default:
-    //     return [];
+    console.log(testCase.testType)
+    switch (testCase.testType.toLowerCase()) {
+      case 'invalid date check':
+        return ['DVE Run Date', 'Table Name', 'Column Name', 'Month', 'Value', 'Count'];
+      case 'universe check':
+        return ['DVE Run Date', 'Table Name', 'Column Name', 'Value', 'Part of the defined set?', 'Error Flag'];
+      case 'future date check':
+        return ['DVE Run Date', 'Table Name', 'Column Name', 'Month', 'Value', 'Count'];
+      case 'frequency check':
+        return['DVE Run Date', 'For', 'Column Name', 'Value', 'Current Count', 'Previous Count', 'Error Flag'];
+      case 'duplicate check':
+        return['DVE Run Date', 'Table Name', 'Column Name', 'Value', 'Duplicate Detected?', 'Duplicate Count','Error Flag'];      
+      default:
+        return [];
     }
   };
 
+
+  // Generate table rows based on details
   const getRows = () => {
-    return <TableRow>
-        {getHeaders().map((header, idx) => (
-          <CustomTableCell key={idx}>
-            { 
-            details[header] !== undefined ? details[header].toString() : ''
+    console.log("details", testCase, details)
+    if(Array.isArray(details)){
+    return details.map((row, index) => (
+        <TableRow key={index}>
+          {getHeaders().map((header, idx) => (
+            <CustomTableCell key={idx} >
+              { 
+               row[header] !== undefined ? row[header].toString() : ''
+              }
+            </CustomTableCell>
+          ))}
+        </TableRow>
+      ));
             }
-          </CustomTableCell>
-        ))}
-      </TableRow>
-  };
-  
-  
+    };
+
+
+  // Convert data to CSV format
   const convertToCSV = (data) => {
     if (data.length === 0) return '';
 
@@ -76,9 +93,9 @@ const DetailedTestCaseModal = ({ open, onClose, testCase }) => {
     document.body.removeChild(link);
   };
 
-
   return (
-<Dialog open={open} onClose={onClose} maxWidth="xl" fullWidth>
+    <>
+    <Dialog open={open} onClose={onClose} maxWidth="xl" fullWidth>
       <DialogTitle sx={{ fontSize: '2rem', fontWeight: 'bold', fontFamily: 'Arial Black, Arial, sans-serif' }}>
         {testCase.testType} Detailed View For 
         <Typography 
@@ -128,6 +145,7 @@ const DetailedTestCaseModal = ({ open, onClose, testCase }) => {
         </CustomButton>
       </DialogActions>
     </Dialog>
+    </>
   );
 };
 
