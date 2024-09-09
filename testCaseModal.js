@@ -28,17 +28,16 @@ const CustomTableCell = styled(TableCell)(({ theme, header, icon }) => ({
 }));
 
 const TestCaseModal = ({ open, onClose, testCase }) => {
-  const { details = [] } = testCase; // Default to empty array if details is undefined
-
+  const { details = [] } = testCase; // Default to empty array if details is undefined 
   // Determine headers based on test_type
   const getHeaders = () => {
     switch (testCase.testType) {
       case 'Data Availability Check':
-        return ['DVE Run Date', 'DataSource', 'TableName', 'Associated Measures', 'Availability', 'Table Last Refresh', 'Error Flag'];
+        return ['DVE Run Date', 'Data Source', 'Table Name', 'Associated Measure', 'Availability', 'Table Last Refresh', 'Error Flag'];
       case 'Table Schema Check':
-        return ['DVE Run Date', 'DataSource', 'TableName', 'Column Name', 'Associated Measures', 'Expected Data Type', 'Current Data Type', 'Error Flag'];
+        return ['DVE Run Date', 'Data Source', 'Table Name', 'Column Name', 'Associated Measure', 'Expected Data Type', 'Current Data Type', 'Error Flag'];
       case 'Column Value Consistency Check':
-        return ['Check #', 'DVE Run Date', 'DataSource', 'TableName', 'Column Name', 'Data Type', 'Test Type', 'Error Flag', 'Details'];
+        return ['CheckNo', 'DVE Run Date', 'Data Source', 'Table Name', 'Column Name', 'Data Type', 'Test Type', 'Error Flag', 'Details'];
       default:
         return [];
     }
@@ -55,7 +54,7 @@ const TestCaseModal = ({ open, onClose, testCase }) => {
         {getHeaders().map((header, idx) => (
           <CustomTableCell key={idx} icon={header === 'Details'}>
             {header === 'Details' ? (
-              <IconButton onClick={() => handleViewDetails(row.details, row.test_id)} color="primary" disabled={!row.details}>
+              <IconButton onClick={() => handleViewDetails(row.Description, row.CheckNo, row["Test Type"])} color="primary" disabled={!row.Description}>
               <VisibilityIcon />
             </IconButton>
             ) : (
@@ -67,9 +66,9 @@ const TestCaseModal = ({ open, onClose, testCase }) => {
     ));
   };
 
-  const handleViewDetails = (details, testId) => {
-    console.log("reache", details, testId)
-    setSelectedTestCase({ details, testId });
+  const handleViewDetails = (Description, testId, testType) => {
+    console.log("reache", Description, testId, testType)
+    setSelectedTestCase({ Description, testId, testType });
     setOpenModal(true);
   };
 
