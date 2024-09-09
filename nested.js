@@ -5,59 +5,59 @@
     "details": [
       {
         "Associated Measure": "[PCE, CBP, PBH, SPC, CRE, GSD, BPD, EED, KED, SPD, OMW, OSW, AMM, FUH, FUM, FUA, SAA, TRC, FMC, PSA, DDE, DAE, HDO, UOP, POD, AAP, IET, PCR, HFS, AHU, EDU, HPC, ENP, BCS-E, DSF-E, AIS-E, SNS-E, COL-E, DMS-E, DRR-E, ASF-E, COA]",
-        "DataSource": "HXG",
+        "Availability": "Yes",
+        "Data Source": "HXG",
         "Error Flag": 0,
-        "Table Exists": "Yes",
-        "TableName": "Member",
-        "date": "2024-09-09"
+        "Table Last Refresh": "2024-09-09",
+        "Table Name": "Member"
       },
       {
         "Associated Measure": "[HPC, CBP, PCE,  CBP,  PBH,  SPC,  FUH,  TRC,  FMC,  PCR,  HFS,  AHU,  HPC, BCS-E, HFS, COL-E, SPC, CRE, SPD]",
-        "DataSource": "HXG",
+        "Availability": "Yes",
+        "Data Source": "HXG",
         "Error Flag": 0,
-        "Table Exists": "Yes",
-        "TableName": "ClaimInstitutionalDetail",
-        "date": "2024-09-09"
+        "Table Last Refresh": "2024-09-09",
+        "Table Name": "ClaimInstitutionalDetail"
       },
       {
         "Associated Measure": "[CBP, EED, DAE, HDO, UOP, IET, EDU, SPC, GSD, BPD, KED, SPD, OSW, FUM, FUA, SAA, FMC, PSA, POD, AAP, AHU, HPC, COA]",
-        "DataSource": "HXG",
+        "Availability": "Yes",
+        "Data Source": "HXG",
         "Error Flag": 0,
-        "Table Exists": "Yes",
-        "TableName": "ClaimLineItemDetail",
-        "date": "2024-09-09"
+        "Table Last Refresh": "2024-09-09",
+        "Table Name": "ClaimLineItemDetail"
       },
       {
         "Associated Measure": "[EED, FMC, AAP, AHU, SPC, SPD, HPC, CBP, PBH, CRE, GSD, BPD, KED, OMW, OSW, SAA, BCS-E, COL-E, DDE, DAE, PCE, AMM, FUH, FUM, EDU, DMS-E, DRR-E, DSF-E, PCR, HFS, HDO, FUA, IET, ASF-E, PSA]",
-        "DataSource": "HXG",
+        "Availability": "Yes",
+        "Data Source": "HXG",
         "Error Flag": 0,
-        "Table Exists": "Yes",
-        "TableName": "ClaimCodeDetail",
-        "date": "2024-09-09"
+        "Table Last Refresh": "2024-09-09",
+        "Table Name": "ClaimCodeDetail"
       },
       {
         "Associated Measure": "[BPD,  AMM,  FMC,  COA,  AAP,  FUA,  DSF-E,  FUH,  FUM,  SAA,  IET,  OMW,  CBP,  BPD,  COL-E,  EED,  KED,  ASF-E,  SNS-E,  AIS-E,  DMS-E,  DRR-E,  BCS-E,  SPC,  SPD,  PSA,  EDU,  DDE]",
-        "DataSource": "HXG",
+        "Availability": "No",
+        "Data Source": "HXG",
         "Error Flag": 1,
-        "Table Exists": "No",
-        "TableName": "dbo.ClaimLineItemDetail",
-        "date": "2024-09-09"
+        "Table Last Refresh": "2024-09-09",
+        "Table Name": "dbo.ClaimLineItemDetail"
       },
       {
         "Associated Measure": "[SPC, BCS-E, OMW, OSW]",
-        "DataSource": "HXG",
+        "Availability": "Yes",
+        "Data Source": "HXG",
         "Error Flag": 0,
-        "Table Exists": "Yes",
-        "TableName": "ClaimMemberDetail",
-        "date": "2024-09-09"
+        "Table Last Refresh": "2024-09-09",
+        "Table Name": "ClaimMemberDetail"
       },
       {
         "Associated Measure": "[EED, FMC, AAP, AHU, SPC, SPD, HPC, CBP, PBH, CRE, GSD, BPD, KED, OMW, OSW, SAA, BCS-E, COL-E, DDE, DAE, PCE, AMM, FUH, FUM, EDU, DMS-E, DRR-E, DSF-E, PCR, HFS, HDO, FUA, IET, ASF-E, PSA]",
-        "DataSource": "HXG",
+        "Availability": "No",
+        "Data Source": "HXG",
         "Error Flag": 1,
-        "Table Exists": "No",
-        "TableName": "Claims",
-        "date": "2024-09-09"
+        "Table Last Refresh": "2024-09-09",
+        "Table Name": "Claims"
       }
     ],
     "number_of_errors": 2,
@@ -73,119 +73,123 @@
     "details": [
       {
         "Associated Measure": "[PCE, CBP, PBH, SPC, CRE, GSD, BPD, EED, KED, SPD, OMW, OSW, AMM, FUH, FUM, FUA, SAA, TRC, FMC, PSA, DDE, DAE, HDO, UOP, POD, AAP, IET, PCR, HFS, AHU, EDU, HPC, ENP, BCS-E, DSF-E, AIS-E, SNS-E, COL-E, DMS-E, DRR-E, ASF-E, COA]",
-        "Column": "DateOfBirth",
+        "Column Name": "DateOfBirth",
         "Current Data Type": "datetime",
+        "DVE Run Date": "2024-09-09",
         "Data Source": "HXG",
         "Error Flag": 0,
         "Expected Data Type": "datetime",
-        "Table": "Member",
-        "date": "2024-09-09"
+        "Table Name": "Member"
       },
       {
         "Associated Measure": "[CBP, PBH, CRE, FUH, FUM, TRC, IET, PCR, HFS, AMM, OMW, FUA, FMC]",
-        "Column": "AdmissionDate",
+        "Column Name": "AdmissionDate",
         "Current Data Type": "datetime",
+        "DVE Run Date": "2024-09-09",
         "Data Source": "HXG",
         "Error Flag": 0,
         "Expected Data Type": "datetime",
-        "Table": "ClaimInstitutionalDetail",
-        "date": "2024-09-09"
+        "Table Name": "ClaimInstitutionalDetail"
       },
       {
         "Associated Measure": "[CBP, EED, DAE, HDO, UOP, IET, EDU, SPC, GSD, BPD, KED, SPD, OSW, FUM, FUA, SAA, FMC, PSA, POD, AAP, AHU, HPC, COA]",
-        "Column": "DOSTo",
+        "Column Name": "DOSTo",
         "Current Data Type": "datetime",
+        "DVE Run Date": "2024-09-09",
         "Data Source": "HXG",
         "Error Flag": 0,
         "Expected Data Type": "datetime",
-        "Table": "ClaimLineItemDetail",
-        "date": "2024-09-09"
+        "Table Name": "ClaimLineItemDetail"
       },
       {
         "Associated Measure": "[CBP, EED, DAE, HDO, UOP, IET, EDU, SPC, GSD, BPD, KED, SPD, OSW, FUM, FUA, SAA, FMC, PSA, POD, AAP, AHU, HPC, COA]",
-        "Column": "DOSFrom",
+        "Column Name": "DOSFrom",
         "Current Data Type": "datetime",
+        "DVE Run Date": "2024-09-09",
         "Data Source": "HXG",
         "Error Flag": 0,
         "Expected Data Type": "datetime",
-        "Table": "ClaimLineItemDetail",
-        "date": "2024-09-09"
+        "Table Name": "ClaimLineItemDetail"
       },
       {
         "Associated Measure": "[PCE, CBP, PBH, SPC, CRE, GSD, BPD, EED, KED, SPD, OMW, OSW, AMM, FUH, FUM, FUA, SAA, TRC, FMC, PSA, DDE, DAE, HDO, UOP, POD, AAP, IET, BCS-E, DSF-E, AIS-E, SNS-E, COL-E, DMS-E, DRR-E, ASF-E, COA]",
-        "Column": "DeathDate",
+        "Column Name": "DeathDate",
         "Current Data Type": "datetime",
+        "DVE Run Date": "2024-09-09",
         "Data Source": "HXG",
         "Error Flag": 0,
         "Expected Data Type": "datetime",
-        "Table": "Member",
-        "date": "2024-09-09"
+        "Table Name": "Member"
       },
       {
         "Associated Measure": "[EED, FMC, AAP, AHU, SPC, SPD, HPC, CBP, PBH, CRE, GSD, BPD, KED, OMW, OSW, SAA, BCS-E, COL-E, DDE, DAE, PCE, AMM, FUH, FUM, EDU, DMS-E, DRR-E, DSF-E, PCR, HFS, HDO, FUA, IET, ASF-E, PSA]",
-        "Column": "CodeNumber",
+        "Column Name": "CodeNumber",
         "Current Data Type": "varchar",
+        "DVE Run Date": "2024-09-09",
         "Data Source": "HXG",
         "Error Flag": 0,
         "Expected Data Type": "varchar",
-        "Table": "ClaimCodeDetail",
-        "date": "2024-09-09"
+        "Table Name": "ClaimCodeDetail"
       },
       {
         "Associated Measure": "[SPC, CRE, SPD, CBP, SPD, SPC, DDE, HPC, KED, AMM, FUH, FUM, SAA, FMC, EDU, CRE, HPC, PCR, HFS, AHU, IET,BCS-E, COL-E]",
-        "Column": "PrincipalProc",
+        "Column Name": "PrincipalProc",
         "Current Data Type": "varchar",
+        "DVE Run Date": "2024-09-09",
         "Data Source": "HXG",
         "Error Flag": 0,
         "Expected Data Type": "varchar",
-        "Table": "ClaimInstitutionalDetail",
-        "date": "2024-09-09"
+        "Table Name": "ClaimInstitutionalDetail"
       },
       {
-        "Column": "HCPCSorHIPPSCode",
-        "Current Data Type": "Column not found",
+        "Associated Measure": "[BPD, AMM, FMC, COA, AAP, DSF-E, FUH, FUM, FUA, SAA, IET, OMW, CBP, COL-E, EED, KED, SNS-E, AIS-E, DMS-E, DRR-E, BCS-E, SPC, SPD, PSA, EDU, DDE]",
+        "Column Name": "HCPCSorHIPPSCode",
+        "Current Data Type": "Column Not Found",
+        "DVE Run Date": "2024-09-09",
         "Data Source": "HXG",
         "Error Flag": 1,
         "Expected Data Type": "varchar",
-        "Table": "dbo.ClaimLineItemDetail"
+        "Table Name": "dbo.ClaimLineItemDetail"
       },
       {
         "Associated Measure": "UOP",
-        "Column": "RenderingProviderNPI",
+        "Column Name": "RenderingProviderNPI",
         "Current Data Type": "varchar",
+        "DVE Run Date": "2024-09-09",
         "Data Source": "HXG",
         "Error Flag": 0,
         "Expected Data Type": "varchar",
-        "Table": "ClaimLineItemDetail",
-        "date": "2024-09-09"
+        "Table Name": "ClaimLineItemDetail"
       },
       {
         "Associated Measure": "[CBP, EED, DAE, HDO, UOP, IET, EDU, SPC, GSD, BPD, KED, SPD, OSW, FUM, FUA, SAA, FMC, PSA, POD, AAP, AHU, HPC, COA]",
-        "Column": "MemberID",
+        "Column Name": "MemberID",
         "Current Data Type": "bigint",
+        "DVE Run Date": "2024-09-09",
         "Data Source": "HXG",
         "Error Flag": 1,
         "Expected Data Type": "varchar",
-        "Table": "ClaimMemberDetail",
-        "date": "2024-09-09"
+        "Table Name": "ClaimMemberDetail"
       },
       {
-        "Column": "StatusID",
-        "Current Data Type": "Column not found",
+        "Associated Measure": "[CBP, EED, DAE, HDO, UOP, IET, EDU, SPC, GSD, BPD, KED, SPD, OSW, FUM, FUA, SAA, FMC, PSA, POD, AAP, AHU, HPC, COA]",
+        "Column Name": "StatusID",
+        "Current Data Type": "Column Not Found",
+        "DVE Run Date": "2024-09-09",
         "Data Source": "HXG",
         "Error Flag": 1,
         "Expected Data Type": "int",
-        "Table": "Claims"
+        "Table Name": "Claims"
       },
       {
         "Associated Measure": "[CBP, BPD, SAA, COA, FUH, AMM, FUM, FUA, FMC, IET]",
-        "Column": "PlaceOfService",
+        "Column Name": "PlaceOfService",
         "Current Data Type": "char",
+        "DVE Run Date": "2024-09-09",
         "Data Source": "HXG",
         "Error Flag": 0,
         "Expected Data Type": "char",
-        "Table": "ClaimLineItemDetail",
-        "date": "2024-09-09"
+        "Table Name": "ClaimLineItemDetail"
       }
     ],
     "number_of_errors": 3,
@@ -200,797 +204,797 @@
     "data_source": "HXG",
     "details": [
       {
+        "Check#": "TC003.01",
+        "Column Name": "DateOfBirth",
+        "Comparision": "",
+        "DVE Run Date": "2024-09-09",
+        "Data Source": "HXG",
+        "Data Types": "datetime",
+        "Details": [],
         "Error Flag": 0,
-        "column": "DateOfBirth",
-        "comparision": "",
-        "data_type": "datetime",
-        "details": [],
-        "run_date": "2024-09-09",
-        "source": "HXG",
-        "table": "Member",
-        "test_id": "TC003.01",
-        "test_type": "Invalid Date check"
+        "Table Name": "Member",
+        "Test Type": "Invalid Date check"
       },
       {
-        "Error Flag": 1,
-        "column": "DateOfBirth",
-        "comparision": "null check",
-        "data_type": "datetime",
-        "details": [
+        "Check#": "TC003.02",
+        "Column Name": "DateOfBirth",
+        "Comparision": "null check",
+        "DVE Run Date": "2024-09-09",
+        "Data Source": "HXG",
+        "Data Types": "datetime",
+        "Details": [
           {
-            "ColumnName": "DateOfBirth",
-            "DataSource": "HXG",
+            "Column Name": "DateOfBirth",
+            "DVE Run Date": "2024-09-09",
+            "Data Source": "HXG",
             "Error Flag": 0,
             "Null Rows": 0,
-            "Percentage": "0.00%",
-            "TableName": "Member",
+            "Table Name": "Member",
             "Total rows": 14831
           }
         ],
-        "run_date": "2024-09-09",
-        "source": "HXG",
-        "table": "Member",
-        "test_id": "TC003.02",
-        "test_type": "Null Check"
-      },
-      {
-        "Error Flag": 0,
-        "column": "AdmissionDate",
-        "comparision": "",
-        "data_type": "datetime",
-        "details": [],
-        "run_date": "2024-09-09",
-        "source": "HXG",
-        "table": "ClaimInstitutionalDetail",
-        "test_id": "TC003.04",
-        "test_type": "Invalid Date check"
-      },
-      {
-        "Error Flag": 0,
-        "column": "DOSTo",
-        "comparision": "",
-        "data_type": "datetime",
-        "details": [],
-        "run_date": "2024-09-09",
-        "source": "HXG",
-        "table": "ClaimLineItemDetail",
-        "test_id": "TC003.05",
-        "test_type": "Invalid Date check"
-      },
-      {
-        "Error Flag": 0,
-        "column": "DOSFrom",
-        "comparision": "",
-        "data_type": "datetime",
-        "details": [],
-        "run_date": "2024-09-09",
-        "source": "HXG",
-        "table": "ClaimLineItemDetail",
-        "test_id": "TC003.06",
-        "test_type": "Invalid Date check"
-      },
-      {
         "Error Flag": 1,
-        "column": "Transaction_Status",
-        "comparision": "universe check",
-        "data_type": "bignit",
-        "details": {
+        "Table Name": "Member",
+        "Test Type": "Null Check"
+      },
+      {
+        "Check#": "TC003.04",
+        "Column Name": "AdmissionDate",
+        "Comparision": "",
+        "DVE Run Date": "2024-09-09",
+        "Data Source": "HXG",
+        "Data Types": "datetime",
+        "Details": [],
+        "Error Flag": 0,
+        "Table Name": "ClaimInstitutionalDetail",
+        "Test Type": "Invalid Date check"
+      },
+      {
+        "Check#": "TC003.05",
+        "Column Name": "DOSTo",
+        "Comparision": "",
+        "DVE Run Date": "2024-09-09",
+        "Data Source": "HXG",
+        "Data Types": "datetime",
+        "Details": [],
+        "Error Flag": 0,
+        "Table Name": "ClaimLineItemDetail",
+        "Test Type": "Invalid Date check"
+      },
+      {
+        "Check#": "TC003.06",
+        "Column Name": "DOSFrom",
+        "Comparision": "",
+        "DVE Run Date": "2024-09-09",
+        "Data Source": "HXG",
+        "Data Types": "datetime",
+        "Details": [],
+        "Error Flag": 0,
+        "Table Name": "ClaimLineItemDetail",
+        "Test Type": "Invalid Date check"
+      },
+      {
+        "Check#": "TC003.07",
+        "Column Name": "Transaction_Status",
+        "Comparision": "universe check",
+        "DVE Run Date": "2024-09-09",
+        "Data Source": "HXG",
+        "Data Types": "bignit",
+        "Details": {
           "error": "Database error: (pyodbc.ProgrammingError) ('42S02', \"[42S02] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'dbo.LHPPharmacyClaimsData'. (208) (SQLExecDirectW)\")\n[SQL: \n                SELECT \n                distinct [Transaction_Status] as out_of_uni_rows\n                FROM dbo.LHPPharmacyClaimsData\n                where  Transaction_Status NOT IN ('[ blank','01','04]') \n            ]\n(Background on this error at: https://sqlalche.me/e/20/f405)"
         },
-        "run_date": "2024-09-09",
-        "source": "HXG",
-        "table": "LHPPharmacyClaimsData",
-        "test_id": "TC003.07",
-        "test_type": "Universe Check"
+        "Error Flag": 1,
+        "Table Name": "LHPPharmacyClaimsData",
+        "Test Type": "Universe Check"
       },
       {
-        "Error Flag": 1,
-        "column": "AdmissionDate",
-        "comparision": "null check",
-        "data_type": "datetime",
-        "details": [
+        "Check#": "TC003.08",
+        "Column Name": "AdmissionDate",
+        "Comparision": "null check",
+        "DVE Run Date": "2024-09-09",
+        "Data Source": "HXG",
+        "Data Types": "datetime",
+        "Details": [
           {
-            "ColumnName": "AdmissionDate",
-            "DataSource": "HXG",
+            "Column Name": "AdmissionDate",
+            "DVE Run Date": "2024-09-09",
+            "Data Source": "HXG",
             "Error Flag": 1,
             "Null Rows": 40744,
-            "Percentage": "39.66%",
-            "TableName": "ClaimInstitutionalDetail",
+            "Table Name": "ClaimInstitutionalDetail",
             "Total rows": 102722
           }
         ],
-        "run_date": "2024-09-09",
-        "source": "HXG",
-        "table": "ClaimInstitutionalDetail",
-        "test_id": "TC003.08",
-        "test_type": "Null Check"
+        "Error Flag": 1,
+        "Table Name": "ClaimInstitutionalDetail",
+        "Test Type": "Null Check"
       },
       {
-        "Error Flag": 1,
-        "column": "DOSTo",
-        "comparision": "null check",
-        "data_type": "datetime",
-        "details": [
+        "Check#": "TC003.10",
+        "Column Name": "DOSTo",
+        "Comparision": "null check",
+        "DVE Run Date": "2024-09-09",
+        "Data Source": "HXG",
+        "Data Types": "datetime",
+        "Details": [
           {
-            "ColumnName": "DOSTo",
-            "DataSource": "HXG",
+            "Column Name": "DOSTo",
+            "DVE Run Date": "2024-09-09",
+            "Data Source": "HXG",
             "Error Flag": 1,
             "Null Rows": 201,
-            "Percentage": "0.00%",
-            "TableName": "ClaimLineItemDetail",
+            "Table Name": "ClaimLineItemDetail",
             "Total rows": 6582633
           }
         ],
-        "run_date": "2024-09-09",
-        "source": "HXG",
-        "table": "ClaimLineItemDetail",
-        "test_id": "TC003.10",
-        "test_type": "Null Check"
+        "Error Flag": 1,
+        "Table Name": "ClaimLineItemDetail",
+        "Test Type": "Null Check"
       },
       {
-        "Error Flag": 1,
-        "column": "DOSFrom",
-        "comparision": "null check",
-        "data_type": "datetime",
-        "details": [
+        "Check#": "TC003.12",
+        "Column Name": "DOSFrom",
+        "Comparision": "null check",
+        "DVE Run Date": "2024-09-09",
+        "Data Source": "HXG",
+        "Data Types": "datetime",
+        "Details": [
           {
-            "ColumnName": "DOSFrom",
-            "DataSource": "HXG",
+            "Column Name": "DOSFrom",
+            "DVE Run Date": "2024-09-09",
+            "Data Source": "HXG",
             "Error Flag": 0,
             "Null Rows": 0,
-            "Percentage": "0.00%",
-            "TableName": "ClaimLineItemDetail",
+            "Table Name": "ClaimLineItemDetail",
             "Total rows": 6582633
           }
         ],
-        "run_date": "2024-09-09",
-        "source": "HXG",
-        "table": "ClaimLineItemDetail",
-        "test_id": "TC003.12",
-        "test_type": "Null Check"
-      },
-      {
-        "Error Flag": 0,
-        "column": "DeathDate",
-        "comparision": "",
-        "data_type": "datetime",
-        "details": [],
-        "run_date": "2024-09-09",
-        "source": "HXG",
-        "table": "Member",
-        "test_id": "TC003.15",
-        "test_type": "Invalid Date check"
-      },
-      {
         "Error Flag": 1,
-        "column": "Date_Of_Service1",
-        "comparision": "null check",
-        "data_type": "varchar",
-        "details": {
+        "Table Name": "ClaimLineItemDetail",
+        "Test Type": "Null Check"
+      },
+      {
+        "Check#": "TC003.15",
+        "Column Name": "DeathDate",
+        "Comparision": "",
+        "DVE Run Date": "2024-09-09",
+        "Data Source": "HXG",
+        "Data Types": "datetime",
+        "Details": [],
+        "Error Flag": 0,
+        "Table Name": "Member",
+        "Test Type": "Invalid Date check"
+      },
+      {
+        "Check#": "TC003.17",
+        "Column Name": "Date_Of_Service1",
+        "Comparision": "null check",
+        "DVE Run Date": "2024-09-09",
+        "Data Source": "HXG",
+        "Data Types": "varchar",
+        "Details": {
           "error": "Database error: (pyodbc.ProgrammingError) ('42S02', \"[42S02] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'dbo.LHPPharmacyClaimsData'. (208) (SQLExecDirectW)\")\n[SQL: \n        SELECT COUNT(*) as total_rows, \n               SUM(CASE WHEN Date_Of_Service1 IS NULL THEN 1 ELSE 0 END) as null_rows \n        FROM dbo.LHPPharmacyClaimsData\n        ]\n(Background on this error at: https://sqlalche.me/e/20/f405)"
         },
-        "run_date": "2024-09-09",
-        "source": "HXG",
-        "table": "LHPPharmacyClaimsData",
-        "test_id": "TC003.17",
-        "test_type": "Null Check"
-      },
-      {
-        "Error Flag": 0,
-        "column": "Date_Of_Service1",
-        "comparision": "",
-        "data_type": "varchar",
-        "details": [],
-        "run_date": "2024-09-09",
-        "source": "HXG",
-        "table": "LHPPharmacyClaimsData",
-        "test_id": "TC003.18",
-        "test_type": "Invalid Date check"
-      },
-      {
         "Error Flag": 1,
-        "column": "Days_Supply",
-        "comparision": "null check",
-        "data_type": "varchar",
-        "details": {
+        "Table Name": "LHPPharmacyClaimsData",
+        "Test Type": "Null Check"
+      },
+      {
+        "Check#": "TC003.18",
+        "Column Name": "Date_Of_Service1",
+        "Comparision": "",
+        "DVE Run Date": "2024-09-09",
+        "Data Source": "HXG",
+        "Data Types": "varchar",
+        "Details": [],
+        "Error Flag": 0,
+        "Table Name": "LHPPharmacyClaimsData",
+        "Test Type": "Invalid Date check"
+      },
+      {
+        "Check#": "TC003.20",
+        "Column Name": "Days_Supply",
+        "Comparision": "null check",
+        "DVE Run Date": "2024-09-09",
+        "Data Source": "HXG",
+        "Data Types": "varchar",
+        "Details": {
           "error": "Database error: (pyodbc.ProgrammingError) ('42S02', \"[42S02] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'dbo.LHPPharmacyClaimsData'. (208) (SQLExecDirectW)\")\n[SQL: \n        SELECT COUNT(*) as total_rows, \n               SUM(CASE WHEN Days_Supply IS NULL THEN 1 ELSE 0 END) as null_rows \n        FROM dbo.LHPPharmacyClaimsData\n        ]\n(Background on this error at: https://sqlalche.me/e/20/f405)"
         },
-        "run_date": "2024-09-09",
-        "source": "HXG",
-        "table": "LHPPharmacyClaimsData",
-        "test_id": "TC003.20",
-        "test_type": "Null Check"
+        "Error Flag": 1,
+        "Table Name": "LHPPharmacyClaimsData",
+        "Test Type": "Null Check"
       },
       {
-        "Error Flag": 1,
-        "column": "CodeNumber",
-        "comparision": "null check",
-        "data_type": "varchar",
-        "details": [
+        "Check#": "TC003.21",
+        "Column Name": "CodeNumber",
+        "Comparision": "null check",
+        "DVE Run Date": "2024-09-09",
+        "Data Source": "HXG",
+        "Data Types": "varchar",
+        "Details": [
           {
-            "ColumnName": "CodeNumber",
-            "DataSource": "HXG",
+            "Column Name": "CodeNumber",
+            "DVE Run Date": "2024-09-09",
+            "Data Source": "HXG",
             "Error Flag": 0,
             "Null Rows": 0,
-            "Percentage": "0.00%",
-            "TableName": "ClaimCodeDetail",
+            "Table Name": "ClaimCodeDetail",
             "Total rows": 11141136
           }
         ],
-        "run_date": "2024-09-09",
-        "source": "HXG",
-        "table": "ClaimCodeDetail",
-        "test_id": "TC003.21",
-        "test_type": "Null Check"
+        "Error Flag": 1,
+        "Table Name": "ClaimCodeDetail",
+        "Test Type": "Null Check"
       },
       {
-        "Error Flag": 1,
-        "column": "PrincipalProc",
-        "comparision": "null check",
-        "data_type": "varchar",
-        "details": [
+        "Check#": "TC003.22",
+        "Column Name": "PrincipalProc",
+        "Comparision": "null check",
+        "DVE Run Date": "2024-09-09",
+        "Data Source": "HXG",
+        "Data Types": "varchar",
+        "Details": [
           {
-            "ColumnName": "PrincipalProc",
-            "DataSource": "HXG",
+            "Column Name": "PrincipalProc",
+            "DVE Run Date": "2024-09-09",
+            "Data Source": "HXG",
             "Error Flag": 1,
             "Null Rows": 96260,
-            "Percentage": "93.71%",
-            "TableName": "ClaimInstitutionalDetail",
+            "Table Name": "ClaimInstitutionalDetail",
             "Total rows": 102722
           }
         ],
-        "run_date": "2024-09-09",
-        "source": "HXG",
-        "table": "ClaimInstitutionalDetail",
-        "test_id": "TC003.22",
-        "test_type": "Null Check"
+        "Error Flag": 1,
+        "Table Name": "ClaimInstitutionalDetail",
+        "Test Type": "Null Check"
       },
       {
-        "Error Flag": 1,
-        "column": "HCPCSorHIPPSCode",
-        "comparision": "null check",
-        "data_type": "varchar",
-        "details": {
+        "Check#": "TC003.23",
+        "Column Name": "HCPCSorHIPPSCode",
+        "Comparision": "null check",
+        "DVE Run Date": "2024-09-09",
+        "Data Source": "HXG",
+        "Data Types": "varchar",
+        "Details": {
           "error": "Database error: (pyodbc.ProgrammingError) ('42S02', \"[42S02] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'dbo.dbo.ClaimLineItemDetail'. (208) (SQLExecDirectW)\")\n[SQL: \n        SELECT COUNT(*) as total_rows, \n               SUM(CASE WHEN HCPCSorHIPPSCode IS NULL THEN 1 ELSE 0 END) as null_rows \n        FROM dbo.dbo.ClaimLineItemDetail\n        ]\n(Background on this error at: https://sqlalche.me/e/20/f405)"
         },
-        "run_date": "2024-09-09",
-        "source": "HXG",
-        "table": "dbo.ClaimLineItemDetail",
-        "test_id": "TC003.23",
-        "test_type": "Null Check"
+        "Error Flag": 1,
+        "Table Name": "dbo.ClaimLineItemDetail",
+        "Test Type": "Null Check"
       },
       {
-        "Error Flag": 1,
-        "column": "RenderingProviderNPI",
-        "comparision": "null check",
-        "data_type": "varchar",
-        "details": [
+        "Check#": "TC003.24",
+        "Column Name": "RenderingProviderNPI",
+        "Comparision": "null check",
+        "DVE Run Date": "2024-09-09",
+        "Data Source": "HXG",
+        "Data Types": "varchar",
+        "Details": [
           {
-            "ColumnName": "RenderingProviderNPI",
-            "DataSource": "HXG",
+            "Column Name": "RenderingProviderNPI",
+            "DVE Run Date": "2024-09-09",
+            "Data Source": "HXG",
             "Error Flag": 1,
             "Null Rows": 1686790,
-            "Percentage": "25.62%",
-            "TableName": "ClaimLineItemDetail",
+            "Table Name": "ClaimLineItemDetail",
             "Total rows": 6582633
           }
         ],
-        "run_date": "2024-09-09",
-        "source": "HXG",
-        "table": "ClaimLineItemDetail",
-        "test_id": "TC003.24",
-        "test_type": "Null Check"
+        "Error Flag": 1,
+        "Table Name": "ClaimLineItemDetail",
+        "Test Type": "Null Check"
       },
       {
-        "Error Flag": 1,
-        "column": "Pharmacy_NPI",
-        "comparision": "null check",
-        "data_type": "varchar",
-        "details": {
+        "Check#": "TC003.25",
+        "Column Name": "Pharmacy_NPI",
+        "Comparision": "null check",
+        "DVE Run Date": "2024-09-09",
+        "Data Source": "HXG",
+        "Data Types": "varchar",
+        "Details": {
           "error": "Database error: (pyodbc.ProgrammingError) ('42S02', \"[42S02] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'dbo.LHPPharmacyClaimsData'. (208) (SQLExecDirectW)\")\n[SQL: \n        SELECT COUNT(*) as total_rows, \n               SUM(CASE WHEN Pharmacy_NPI IS NULL THEN 1 ELSE 0 END) as null_rows \n        FROM dbo.LHPPharmacyClaimsData\n        ]\n(Background on this error at: https://sqlalche.me/e/20/f405)"
         },
-        "run_date": "2024-09-09",
-        "source": "HXG",
-        "table": "LHPPharmacyClaimsData",
-        "test_id": "TC003.25",
-        "test_type": "Null Check"
+        "Error Flag": 1,
+        "Table Name": "LHPPharmacyClaimsData",
+        "Test Type": "Null Check"
       },
       {
-        "Error Flag": 1,
-        "column": "Date_Prescription_Written",
-        "comparision": "null check",
-        "data_type": "datetime",
-        "details": {
+        "Check#": "TC003.26",
+        "Column Name": "Date_Prescription_Written",
+        "Comparision": "null check",
+        "DVE Run Date": "2024-09-09",
+        "Data Source": "HXG",
+        "Data Types": "datetime",
+        "Details": {
           "error": "Database error: (pyodbc.ProgrammingError) ('42S02', \"[42S02] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'dbo.LHPPharmacyClaimsData'. (208) (SQLExecDirectW)\")\n[SQL: \n        SELECT COUNT(*) as total_rows, \n               SUM(CASE WHEN Date_Prescription_Written IS NULL THEN 1 ELSE 0 END) as null_rows \n        FROM dbo.LHPPharmacyClaimsData\n        ]\n(Background on this error at: https://sqlalche.me/e/20/f405)"
         },
-        "run_date": "2024-09-09",
-        "source": "HXG",
-        "table": "LHPPharmacyClaimsData",
-        "test_id": "TC003.26",
-        "test_type": "Null Check"
-      },
-      {
-        "Error Flag": 0,
-        "column": "Date_Prescription_Written",
-        "comparision": "",
-        "data_type": "datetime",
-        "details": [],
-        "run_date": "2024-09-09",
-        "source": "HXG",
-        "table": "LHPPharmacyClaimsData",
-        "test_id": "TC003.27",
-        "test_type": "Invalid Date check"
-      },
-      {
         "Error Flag": 1,
-        "column": "MemberID",
-        "comparision": "null check",
-        "data_type": "varchar",
-        "details": [
+        "Table Name": "LHPPharmacyClaimsData",
+        "Test Type": "Null Check"
+      },
+      {
+        "Check#": "TC003.27",
+        "Column Name": "Date_Prescription_Written",
+        "Comparision": "",
+        "DVE Run Date": "2024-09-09",
+        "Data Source": "HXG",
+        "Data Types": "datetime",
+        "Details": [],
+        "Error Flag": 0,
+        "Table Name": "LHPPharmacyClaimsData",
+        "Test Type": "Invalid Date check"
+      },
+      {
+        "Check#": "TC003.29",
+        "Column Name": "MemberID",
+        "Comparision": "null check",
+        "DVE Run Date": "2024-09-09",
+        "Data Source": "HXG",
+        "Data Types": "varchar",
+        "Details": [
           {
-            "ColumnName": "MemberID",
-            "DataSource": "HXG",
+            "Column Name": "MemberID",
+            "DVE Run Date": "2024-09-09",
+            "Data Source": "HXG",
             "Error Flag": 0,
             "Null Rows": 0,
-            "Percentage": "0.00%",
-            "TableName": "ClaimMemberDetail",
+            "Table Name": "ClaimMemberDetail",
             "Total rows": 1914793
           }
         ],
-        "run_date": "2024-09-09",
-        "source": "HXG",
-        "table": "ClaimMemberDetail",
-        "test_id": "TC003.29",
-        "test_type": "Null Check"
+        "Error Flag": 1,
+        "Table Name": "ClaimMemberDetail",
+        "Test Type": "Null Check"
       },
       {
-        "Error Flag": 1,
-        "column": "StatusID",
-        "comparision": "null check",
-        "data_type": "int",
-        "details": {
+        "Check#": "TC003.30",
+        "Column Name": "StatusID",
+        "Comparision": "null check",
+        "DVE Run Date": "2024-09-09",
+        "Data Source": "HXG",
+        "Data Types": "int",
+        "Details": {
           "error": "Database error: (pyodbc.ProgrammingError) ('42S02', \"[42S02] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'dbo.Claims'. (208) (SQLExecDirectW)\")\n[SQL: \n        SELECT COUNT(*) as total_rows, \n               SUM(CASE WHEN StatusID IS NULL THEN 1 ELSE 0 END) as null_rows \n        FROM dbo.Claims\n        ]\n(Background on this error at: https://sqlalche.me/e/20/f405)"
         },
-        "run_date": "2024-09-09",
-        "source": "HXG",
-        "table": "Claims",
-        "test_id": "TC003.30",
-        "test_type": "Null Check"
+        "Error Flag": 1,
+        "Table Name": "Claims",
+        "Test Type": "Null Check"
       },
       {
-        "Error Flag": 1,
-        "column": "PlaceOfService",
-        "comparision": "universe check",
-        "data_type": "char",
-        "details": [
+        "Check#": "TC003.31",
+        "Column Name": "PlaceOfService",
+        "Comparision": "universe check",
+        "DVE Run Date": "2024-09-09",
+        "Data Source": "HXG",
+        "Data Types": "char",
+        "Details": [
           {
-            "ColumnName": "PlaceOfService",
-            "DVE_Run_Date": "09092024",
+            "Column Name": "PlaceOfService",
+            "DVE Run Date": "2024-09-09",
             "Error Flag": 1,
             "Part of defined set?": "No",
-            "TableName": "ClaimLineItemDetail",
+            "Table Name": "ClaimLineItemDetail",
             "Values": "  "
           },
           {
-            "ColumnName": "PlaceOfService",
-            "DVE_Run_Date": "09092024",
+            "Column Name": "PlaceOfService",
+            "DVE Run Date": "2024-09-09",
             "Error Flag": 1,
             "Part of defined set?": "No",
-            "TableName": "ClaimLineItemDetail",
+            "Table Name": "ClaimLineItemDetail",
             "Values": "01"
           },
           {
-            "ColumnName": "PlaceOfService",
-            "DVE_Run_Date": "09092024",
+            "Column Name": "PlaceOfService",
+            "DVE Run Date": "2024-09-09",
             "Error Flag": 1,
             "Part of defined set?": "No",
-            "TableName": "ClaimLineItemDetail",
+            "Table Name": "ClaimLineItemDetail",
             "Values": "02"
           },
           {
-            "ColumnName": "PlaceOfService",
-            "DVE_Run_Date": "09092024",
+            "Column Name": "PlaceOfService",
+            "DVE Run Date": "2024-09-09",
             "Error Flag": 1,
             "Part of defined set?": "No",
-            "TableName": "ClaimLineItemDetail",
+            "Table Name": "ClaimLineItemDetail",
             "Values": "03"
           },
           {
-            "ColumnName": "PlaceOfService",
-            "DVE_Run_Date": "09092024",
+            "Column Name": "PlaceOfService",
+            "DVE Run Date": "2024-09-09",
             "Error Flag": 1,
             "Part of defined set?": "No",
-            "TableName": "ClaimLineItemDetail",
+            "Table Name": "ClaimLineItemDetail",
             "Values": "04"
           },
           {
-            "ColumnName": "PlaceOfService",
-            "DVE_Run_Date": "09092024",
+            "Column Name": "PlaceOfService",
+            "DVE Run Date": "2024-09-09",
             "Error Flag": 1,
             "Part of defined set?": "No",
-            "TableName": "ClaimLineItemDetail",
+            "Table Name": "ClaimLineItemDetail",
             "Values": "1 "
           },
           {
-            "ColumnName": "PlaceOfService",
-            "DVE_Run_Date": "09092024",
+            "Column Name": "PlaceOfService",
+            "DVE Run Date": "2024-09-09",
             "Error Flag": 1,
             "Part of defined set?": "No",
-            "TableName": "ClaimLineItemDetail",
+            "Table Name": "ClaimLineItemDetail",
             "Values": "52"
           },
           {
-            "ColumnName": "PlaceOfService",
-            "DVE_Run_Date": "09092024",
+            "Column Name": "PlaceOfService",
+            "DVE Run Date": "2024-09-09",
             "Error Flag": 1,
             "Part of defined set?": "No",
-            "TableName": "ClaimLineItemDetail",
+            "Table Name": "ClaimLineItemDetail",
             "Values": "N "
           },
           {
-            "ColumnName": "PlaceOfService",
-            "DVE_Run_Date": "09092024",
+            "Column Name": "PlaceOfService",
+            "DVE Run Date": "2024-09-09",
             "Error Flag": 0,
             "Part of defined set?": "Yes",
-            "TableName": "ClaimLineItemDetail",
+            "Table Name": "ClaimLineItemDetail",
             "Values": "1"
           },
           {
-            "ColumnName": "PlaceOfService",
-            "DVE_Run_Date": "09092024",
+            "Column Name": "PlaceOfService",
+            "DVE Run Date": "2024-09-09",
             "Error Flag": 0,
             "Part of defined set?": "Yes",
-            "TableName": "ClaimLineItemDetail",
+            "Table Name": "ClaimLineItemDetail",
             "Values": "2"
           },
           {
-            "ColumnName": "PlaceOfService",
-            "DVE_Run_Date": "09092024",
+            "Column Name": "PlaceOfService",
+            "DVE Run Date": "2024-09-09",
             "Error Flag": 0,
             "Part of defined set?": "Yes",
-            "TableName": "ClaimLineItemDetail",
+            "Table Name": "ClaimLineItemDetail",
             "Values": "3"
           },
           {
-            "ColumnName": "PlaceOfService",
-            "DVE_Run_Date": "09092024",
+            "Column Name": "PlaceOfService",
+            "DVE Run Date": "2024-09-09",
             "Error Flag": 0,
             "Part of defined set?": "Yes",
-            "TableName": "ClaimLineItemDetail",
+            "Table Name": "ClaimLineItemDetail",
             "Values": "4"
           },
           {
-            "ColumnName": "PlaceOfService",
-            "DVE_Run_Date": "09092024",
+            "Column Name": "PlaceOfService",
+            "DVE Run Date": "2024-09-09",
             "Error Flag": 0,
             "Part of defined set?": "Yes",
-            "TableName": "ClaimLineItemDetail",
+            "Table Name": "ClaimLineItemDetail",
             "Values": "10"
           },
           {
-            "ColumnName": "PlaceOfService",
-            "DVE_Run_Date": "09092024",
+            "Column Name": "PlaceOfService",
+            "DVE Run Date": "2024-09-09",
             "Error Flag": 0,
             "Part of defined set?": "Yes",
-            "TableName": "ClaimLineItemDetail",
+            "Table Name": "ClaimLineItemDetail",
             "Values": "11"
           },
           {
-            "ColumnName": "PlaceOfService",
-            "DVE_Run_Date": "09092024",
+            "Column Name": "PlaceOfService",
+            "DVE Run Date": "2024-09-09",
             "Error Flag": 0,
             "Part of defined set?": "Yes",
-            "TableName": "ClaimLineItemDetail",
+            "Table Name": "ClaimLineItemDetail",
             "Values": "12"
           },
           {
-            "ColumnName": "PlaceOfService",
-            "DVE_Run_Date": "09092024",
+            "Column Name": "PlaceOfService",
+            "DVE Run Date": "2024-09-09",
             "Error Flag": 0,
             "Part of defined set?": "Yes",
-            "TableName": "ClaimLineItemDetail",
+            "Table Name": "ClaimLineItemDetail",
             "Values": "13"
           },
           {
-            "ColumnName": "PlaceOfService",
-            "DVE_Run_Date": "09092024",
+            "Column Name": "PlaceOfService",
+            "DVE Run Date": "2024-09-09",
             "Error Flag": 0,
             "Part of defined set?": "Yes",
-            "TableName": "ClaimLineItemDetail",
+            "Table Name": "ClaimLineItemDetail",
             "Values": "14"
           },
           {
-            "ColumnName": "PlaceOfService",
-            "DVE_Run_Date": "09092024",
+            "Column Name": "PlaceOfService",
+            "DVE Run Date": "2024-09-09",
             "Error Flag": 0,
             "Part of defined set?": "Yes",
-            "TableName": "ClaimLineItemDetail",
+            "Table Name": "ClaimLineItemDetail",
             "Values": "15"
           },
           {
-            "ColumnName": "PlaceOfService",
-            "DVE_Run_Date": "09092024",
+            "Column Name": "PlaceOfService",
+            "DVE Run Date": "2024-09-09",
             "Error Flag": 0,
             "Part of defined set?": "Yes",
-            "TableName": "ClaimLineItemDetail",
+            "Table Name": "ClaimLineItemDetail",
             "Values": "19"
           },
           {
-            "ColumnName": "PlaceOfService",
-            "DVE_Run_Date": "09092024",
+            "Column Name": "PlaceOfService",
+            "DVE Run Date": "2024-09-09",
             "Error Flag": 0,
             "Part of defined set?": "Yes",
-            "TableName": "ClaimLineItemDetail",
+            "Table Name": "ClaimLineItemDetail",
             "Values": "20"
           },
           {
-            "ColumnName": "PlaceOfService",
-            "DVE_Run_Date": "09092024",
+            "Column Name": "PlaceOfService",
+            "DVE Run Date": "2024-09-09",
             "Error Flag": 0,
             "Part of defined set?": "Yes",
-            "TableName": "ClaimLineItemDetail",
+            "Table Name": "ClaimLineItemDetail",
             "Values": "21"
           },
           {
-            "ColumnName": "PlaceOfService",
-            "DVE_Run_Date": "09092024",
+            "Column Name": "PlaceOfService",
+            "DVE Run Date": "2024-09-09",
             "Error Flag": 0,
             "Part of defined set?": "Yes",
-            "TableName": "ClaimLineItemDetail",
+            "Table Name": "ClaimLineItemDetail",
             "Values": "22"
           },
           {
-            "ColumnName": "PlaceOfService",
-            "DVE_Run_Date": "09092024",
+            "Column Name": "PlaceOfService",
+            "DVE Run Date": "2024-09-09",
             "Error Flag": 0,
             "Part of defined set?": "Yes",
-            "TableName": "ClaimLineItemDetail",
+            "Table Name": "ClaimLineItemDetail",
             "Values": "23"
           },
           {
-            "ColumnName": "PlaceOfService",
-            "DVE_Run_Date": "09092024",
+            "Column Name": "PlaceOfService",
+            "DVE Run Date": "2024-09-09",
             "Error Flag": 0,
             "Part of defined set?": "Yes",
-            "TableName": "ClaimLineItemDetail",
+            "Table Name": "ClaimLineItemDetail",
             "Values": "24"
           },
           {
-            "ColumnName": "PlaceOfService",
-            "DVE_Run_Date": "09092024",
+            "Column Name": "PlaceOfService",
+            "DVE Run Date": "2024-09-09",
             "Error Flag": 0,
             "Part of defined set?": "Yes",
-            "TableName": "ClaimLineItemDetail",
+            "Table Name": "ClaimLineItemDetail",
             "Values": "26"
           },
           {
-            "ColumnName": "PlaceOfService",
-            "DVE_Run_Date": "09092024",
+            "Column Name": "PlaceOfService",
+            "DVE Run Date": "2024-09-09",
             "Error Flag": 0,
             "Part of defined set?": "Yes",
-            "TableName": "ClaimLineItemDetail",
+            "Table Name": "ClaimLineItemDetail",
             "Values": "27"
           },
           {
-            "ColumnName": "PlaceOfService",
-            "DVE_Run_Date": "09092024",
+            "Column Name": "PlaceOfService",
+            "DVE Run Date": "2024-09-09",
             "Error Flag": 0,
             "Part of defined set?": "Yes",
-            "TableName": "ClaimLineItemDetail",
+            "Table Name": "ClaimLineItemDetail",
             "Values": "29"
           },
           {
-            "ColumnName": "PlaceOfService",
-            "DVE_Run_Date": "09092024",
+            "Column Name": "PlaceOfService",
+            "DVE Run Date": "2024-09-09",
             "Error Flag": 0,
             "Part of defined set?": "Yes",
-            "TableName": "ClaimLineItemDetail",
+            "Table Name": "ClaimLineItemDetail",
             "Values": "31"
           },
           {
-            "ColumnName": "PlaceOfService",
-            "DVE_Run_Date": "09092024",
+            "Column Name": "PlaceOfService",
+            "DVE Run Date": "2024-09-09",
             "Error Flag": 0,
             "Part of defined set?": "Yes",
-            "TableName": "ClaimLineItemDetail",
+            "Table Name": "ClaimLineItemDetail",
             "Values": "32"
           },
           {
-            "ColumnName": "PlaceOfService",
-            "DVE_Run_Date": "09092024",
+            "Column Name": "PlaceOfService",
+            "DVE Run Date": "2024-09-09",
             "Error Flag": 0,
             "Part of defined set?": "Yes",
-            "TableName": "ClaimLineItemDetail",
+            "Table Name": "ClaimLineItemDetail",
             "Values": "33"
           },
           {
-            "ColumnName": "PlaceOfService",
-            "DVE_Run_Date": "09092024",
+            "Column Name": "PlaceOfService",
+            "DVE Run Date": "2024-09-09",
             "Error Flag": 0,
             "Part of defined set?": "Yes",
-            "TableName": "ClaimLineItemDetail",
+            "Table Name": "ClaimLineItemDetail",
             "Values": "34"
           },
           {
-            "ColumnName": "PlaceOfService",
-            "DVE_Run_Date": "09092024",
+            "Column Name": "PlaceOfService",
+            "DVE Run Date": "2024-09-09",
             "Error Flag": 0,
             "Part of defined set?": "Yes",
-            "TableName": "ClaimLineItemDetail",
+            "Table Name": "ClaimLineItemDetail",
             "Values": "41"
           },
           {
-            "ColumnName": "PlaceOfService",
-            "DVE_Run_Date": "09092024",
+            "Column Name": "PlaceOfService",
+            "DVE Run Date": "2024-09-09",
             "Error Flag": 0,
             "Part of defined set?": "Yes",
-            "TableName": "ClaimLineItemDetail",
+            "Table Name": "ClaimLineItemDetail",
             "Values": "42"
           },
           {
-            "ColumnName": "PlaceOfService",
-            "DVE_Run_Date": "09092024",
+            "Column Name": "PlaceOfService",
+            "DVE Run Date": "2024-09-09",
             "Error Flag": 0,
             "Part of defined set?": "Yes",
-            "TableName": "ClaimLineItemDetail",
+            "Table Name": "ClaimLineItemDetail",
             "Values": "49"
           },
           {
-            "ColumnName": "PlaceOfService",
-            "DVE_Run_Date": "09092024",
+            "Column Name": "PlaceOfService",
+            "DVE Run Date": "2024-09-09",
             "Error Flag": 0,
             "Part of defined set?": "Yes",
-            "TableName": "ClaimLineItemDetail",
+            "Table Name": "ClaimLineItemDetail",
             "Values": "50"
           },
           {
-            "ColumnName": "PlaceOfService",
-            "DVE_Run_Date": "09092024",
+            "Column Name": "PlaceOfService",
+            "DVE Run Date": "2024-09-09",
             "Error Flag": 0,
             "Part of defined set?": "Yes",
-            "TableName": "ClaimLineItemDetail",
+            "Table Name": "ClaimLineItemDetail",
             "Values": "51"
           },
           {
-            "ColumnName": "PlaceOfService",
-            "DVE_Run_Date": "09092024",
+            "Column Name": "PlaceOfService",
+            "DVE Run Date": "2024-09-09",
             "Error Flag": 0,
             "Part of defined set?": "Yes",
-            "TableName": "ClaimLineItemDetail",
+            "Table Name": "ClaimLineItemDetail",
             "Values": "53"
           },
           {
-            "ColumnName": "PlaceOfService",
-            "DVE_Run_Date": "09092024",
+            "Column Name": "PlaceOfService",
+            "DVE Run Date": "2024-09-09",
             "Error Flag": 0,
             "Part of defined set?": "Yes",
-            "TableName": "ClaimLineItemDetail",
+            "Table Name": "ClaimLineItemDetail",
             "Values": "55"
           },
           {
-            "ColumnName": "PlaceOfService",
-            "DVE_Run_Date": "09092024",
+            "Column Name": "PlaceOfService",
+            "DVE Run Date": "2024-09-09",
             "Error Flag": 0,
             "Part of defined set?": "Yes",
-            "TableName": "ClaimLineItemDetail",
+            "Table Name": "ClaimLineItemDetail",
             "Values": "57"
           },
           {
-            "ColumnName": "PlaceOfService",
-            "DVE_Run_Date": "09092024",
+            "Column Name": "PlaceOfService",
+            "DVE Run Date": "2024-09-09",
             "Error Flag": 0,
             "Part of defined set?": "Yes",
-            "TableName": "ClaimLineItemDetail",
+            "Table Name": "ClaimLineItemDetail",
             "Values": "58"
           },
           {
-            "ColumnName": "PlaceOfService",
-            "DVE_Run_Date": "09092024",
+            "Column Name": "PlaceOfService",
+            "DVE Run Date": "2024-09-09",
             "Error Flag": 0,
             "Part of defined set?": "Yes",
-            "TableName": "ClaimLineItemDetail",
+            "Table Name": "ClaimLineItemDetail",
             "Values": "60"
           },
           {
-            "ColumnName": "PlaceOfService",
-            "DVE_Run_Date": "09092024",
+            "Column Name": "PlaceOfService",
+            "DVE Run Date": "2024-09-09",
             "Error Flag": 0,
             "Part of defined set?": "Yes",
-            "TableName": "ClaimLineItemDetail",
+            "Table Name": "ClaimLineItemDetail",
             "Values": "61"
           },
           {
-            "ColumnName": "PlaceOfService",
-            "DVE_Run_Date": "09092024",
+            "Column Name": "PlaceOfService",
+            "DVE Run Date": "2024-09-09",
             "Error Flag": 0,
             "Part of defined set?": "Yes",
-            "TableName": "ClaimLineItemDetail",
+            "Table Name": "ClaimLineItemDetail",
             "Values": "62"
           },
           {
-            "ColumnName": "PlaceOfService",
-            "DVE_Run_Date": "09092024",
+            "Column Name": "PlaceOfService",
+            "DVE Run Date": "2024-09-09",
             "Error Flag": 0,
             "Part of defined set?": "Yes",
-            "TableName": "ClaimLineItemDetail",
+            "Table Name": "ClaimLineItemDetail",
             "Values": "65"
           },
           {
-            "ColumnName": "PlaceOfService",
-            "DVE_Run_Date": "09092024",
+            "Column Name": "PlaceOfService",
+            "DVE Run Date": "2024-09-09",
             "Error Flag": 0,
             "Part of defined set?": "Yes",
-            "TableName": "ClaimLineItemDetail",
+            "Table Name": "ClaimLineItemDetail",
             "Values": "71"
           },
           {
-            "ColumnName": "PlaceOfService",
-            "DVE_Run_Date": "09092024",
+            "Column Name": "PlaceOfService",
+            "DVE Run Date": "2024-09-09",
             "Error Flag": 0,
             "Part of defined set?": "Yes",
-            "TableName": "ClaimLineItemDetail",
+            "Table Name": "ClaimLineItemDetail",
             "Values": "72"
           },
           {
-            "ColumnName": "PlaceOfService",
-            "DVE_Run_Date": "09092024",
+            "Column Name": "PlaceOfService",
+            "DVE Run Date": "2024-09-09",
             "Error Flag": 0,
             "Part of defined set?": "Yes",
-            "TableName": "ClaimLineItemDetail",
+            "Table Name": "ClaimLineItemDetail",
             "Values": "81"
           },
           {
-            "ColumnName": "PlaceOfService",
-            "DVE_Run_Date": "09092024",
+            "Column Name": "PlaceOfService",
+            "DVE Run Date": "2024-09-09",
             "Error Flag": 0,
             "Part of defined set?": "Yes",
-            "TableName": "ClaimLineItemDetail",
+            "Table Name": "ClaimLineItemDetail",
             "Values": "99"
           },
           {
-            "ColumnName": "PlaceOfService",
-            "DVE_Run_Date": "09092024",
+            "Column Name": "PlaceOfService",
+            "DVE Run Date": "2024-09-09",
             "Error Flag": 0,
             "Part of defined set?": "Yes",
-            "TableName": "ClaimLineItemDetail",
+            "Table Name": "ClaimLineItemDetail",
             "Values": "A"
           },
           {
-            "ColumnName": "PlaceOfService",
-            "DVE_Run_Date": "09092024",
+            "Column Name": "PlaceOfService",
+            "DVE Run Date": "2024-09-09",
             "Error Flag": 0,
             "Part of defined set?": "Yes",
-            "TableName": "ClaimLineItemDetail",
+            "Table Name": "ClaimLineItemDetail",
             "Values": "N"
           }
         ],
-        "run_date": "2024-09-09",
-        "source": "HXG",
-        "table": "ClaimLineItemDetail",
-        "test_id": "TC003.31",
-        "test_type": "Universe Check"
+        "Error Flag": 1,
+        "Table Name": "ClaimLineItemDetail",
+        "Test Type": "Universe Check"
       },
       {
-        "Error Flag": 1,
-        "column": "PlaceOfService",
-        "comparision": "null check",
-        "data_type": "char",
-        "details": [
+        "Check#": "TC003.32",
+        "Column Name": "PlaceOfService",
+        "Comparision": "null check",
+        "DVE Run Date": "2024-09-09",
+        "Data Source": "HXG",
+        "Data Types": "char",
+        "Details": [
           {
-            "ColumnName": "PlaceOfService",
-            "DataSource": "HXG",
+            "Column Name": "PlaceOfService",
+            "DVE Run Date": "2024-09-09",
+            "Data Source": "HXG",
             "Error Flag": 1,
             "Null Rows": 31,
-            "Percentage": "0.00%",
-            "TableName": "ClaimLineItemDetail",
+            "Table Name": "ClaimLineItemDetail",
             "Total rows": 6582633
           }
         ],
-        "run_date": "2024-09-09",
-        "source": "HXG",
-        "table": "ClaimLineItemDetail",
-        "test_id": "TC003.32",
-        "test_type": "Null Check"
+        "Error Flag": 1,
+        "Table Name": "ClaimLineItemDetail",
+        "Test Type": "Null Check"
       }
     ],
     "number_of_errors": 17,
