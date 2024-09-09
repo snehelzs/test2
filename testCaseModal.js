@@ -34,11 +34,11 @@ const TestCaseModal = ({ open, onClose, testCase }) => {
   const getHeaders = () => {
     switch (testCase.testType) {
       case 'Data Availability Check':
-        return ['DataSource', 'TableName', 'Error Flag', 'Table Exists', 'TestCaseID', 'Details'];
+        return ['DVE Run Date', 'DataSource', 'TableName', 'Associated Measures', 'Availability', 'Table Last Refresh', 'Error Flag'];
       case 'Table Schema Check':
-        return ['Column', 'Current Data Type', 'Expected Data Type', 'Table', 'Error Flag', 'TestCaseID', 'Details'];
+        return ['DVE Run Date', 'DataSource', 'TableName', 'Column Name', 'Associated Measures', 'Expected Data Type', 'Current Data Type', 'Error Flag'];
       case 'Column Value Consistency Check':
-        return ['Column', 'comparision', 'Error Flag', 'details', 'run_date', 'source', 'table', 'test_id', 'Details'];
+        return ['Check #', 'DVE Run Date', 'DataSource', 'TableName', 'Column Name', 'Data Type', 'Test Type', 'Error Flag', 'Details'];
       default:
         return [];
     }
