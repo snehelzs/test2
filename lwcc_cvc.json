@@ -1,0 +1,868 @@
+[
+  {
+    "DVE_run_date": "2024-09-10",
+    "data_source": "LWCC",
+    "details": [
+      {
+        "CheckNo": "TC001.01",
+        "Column Name": "snomed",
+        "Comparision": "% of null records",
+        "DVE Run Date": "2024-09-10",
+        "Data Source": "LWCC",
+        "Data Type": "text",
+        "Description": [
+          {
+            "Column Name": "snomed",
+            "DVE Run Date": "2024-09-10",
+            "Data Source": "LWCC",
+            "Error Flag": 1,
+            "Null Rows": 136857,
+            "Table Name": "lists",
+            "Total rows": 872726
+          }
+        ],
+        "Error Flag": 1,
+        "Table Name": "lists",
+        "Test Type": "Null Check"
+      },
+      {
+        "CheckNo": "TC001.02",
+        "Column Name": "pos_code",
+        "Comparision": "% of values not in the defined universe",
+        "DVE Run Date": "2024-09-10",
+        "Data Source": "LWCC",
+        "Data Type": "tinyint",
+        "Description": [
+          {
+            "Column Name": "pos_code",
+            "DVE Run Date": "2024-09-10",
+            "Error Flag": 1,
+            "Part of defined set?": "No",
+            "Table Name": "facility",
+            "Values": 1
+          },
+          {
+            "Column Name": "pos_code",
+            "DVE Run Date": "2024-09-10",
+            "Error Flag": 0,
+            "Part of defined set?": "Yes",
+            "Table Name": "facility",
+            "Values": "1"
+          },
+          {
+            "Column Name": "pos_code",
+            "DVE Run Date": "2024-09-10",
+            "Error Flag": 0,
+            "Part of defined set?": "Yes",
+            "Table Name": "facility",
+            "Values": "2"
+          },
+          {
+            "Column Name": "pos_code",
+            "DVE Run Date": "2024-09-10",
+            "Error Flag": 0,
+            "Part of defined set?": "Yes",
+            "Table Name": "facility",
+            "Values": "3"
+          },
+          {
+            "Column Name": "pos_code",
+            "DVE Run Date": "2024-09-10",
+            "Error Flag": 0,
+            "Part of defined set?": "Yes",
+            "Table Name": "facility",
+            "Values": "4"
+          },
+          {
+            "Column Name": "pos_code",
+            "DVE Run Date": "2024-09-10",
+            "Error Flag": 0,
+            "Part of defined set?": "Yes",
+            "Table Name": "facility",
+            "Values": "10"
+          },
+          {
+            "Column Name": "pos_code",
+            "DVE Run Date": "2024-09-10",
+            "Error Flag": 0,
+            "Part of defined set?": "Yes",
+            "Table Name": "facility",
+            "Values": "11"
+          },
+          {
+            "Column Name": "pos_code",
+            "DVE Run Date": "2024-09-10",
+            "Error Flag": 0,
+            "Part of defined set?": "Yes",
+            "Table Name": "facility",
+            "Values": "12"
+          },
+          {
+            "Column Name": "pos_code",
+            "DVE Run Date": "2024-09-10",
+            "Error Flag": 0,
+            "Part of defined set?": "Yes",
+            "Table Name": "facility",
+            "Values": "13"
+          },
+          {
+            "Column Name": "pos_code",
+            "DVE Run Date": "2024-09-10",
+            "Error Flag": 0,
+            "Part of defined set?": "Yes",
+            "Table Name": "facility",
+            "Values": "14"
+          },
+          {
+            "Column Name": "pos_code",
+            "DVE Run Date": "2024-09-10",
+            "Error Flag": 0,
+            "Part of defined set?": "Yes",
+            "Table Name": "facility",
+            "Values": "15"
+          },
+          {
+            "Column Name": "pos_code",
+            "DVE Run Date": "2024-09-10",
+            "Error Flag": 0,
+            "Part of defined set?": "Yes",
+            "Table Name": "facility",
+            "Values": "19"
+          },
+          {
+            "Column Name": "pos_code",
+            "DVE Run Date": "2024-09-10",
+            "Error Flag": 0,
+            "Part of defined set?": "Yes",
+            "Table Name": "facility",
+            "Values": "20"
+          },
+          {
+            "Column Name": "pos_code",
+            "DVE Run Date": "2024-09-10",
+            "Error Flag": 0,
+            "Part of defined set?": "Yes",
+            "Table Name": "facility",
+            "Values": "21"
+          },
+          {
+            "Column Name": "pos_code",
+            "DVE Run Date": "2024-09-10",
+            "Error Flag": 0,
+            "Part of defined set?": "Yes",
+            "Table Name": "facility",
+            "Values": "22"
+          },
+          {
+            "Column Name": "pos_code",
+            "DVE Run Date": "2024-09-10",
+            "Error Flag": 0,
+            "Part of defined set?": "Yes",
+            "Table Name": "facility",
+            "Values": "23"
+          },
+          {
+            "Column Name": "pos_code",
+            "DVE Run Date": "2024-09-10",
+            "Error Flag": 0,
+            "Part of defined set?": "Yes",
+            "Table Name": "facility",
+            "Values": "24"
+          },
+          {
+            "Column Name": "pos_code",
+            "DVE Run Date": "2024-09-10",
+            "Error Flag": 0,
+            "Part of defined set?": "Yes",
+            "Table Name": "facility",
+            "Values": "26"
+          },
+          {
+            "Column Name": "pos_code",
+            "DVE Run Date": "2024-09-10",
+            "Error Flag": 0,
+            "Part of defined set?": "Yes",
+            "Table Name": "facility",
+            "Values": "27"
+          },
+          {
+            "Column Name": "pos_code",
+            "DVE Run Date": "2024-09-10",
+            "Error Flag": 0,
+            "Part of defined set?": "Yes",
+            "Table Name": "facility",
+            "Values": "29"
+          },
+          {
+            "Column Name": "pos_code",
+            "DVE Run Date": "2024-09-10",
+            "Error Flag": 0,
+            "Part of defined set?": "Yes",
+            "Table Name": "facility",
+            "Values": "31"
+          },
+          {
+            "Column Name": "pos_code",
+            "DVE Run Date": "2024-09-10",
+            "Error Flag": 0,
+            "Part of defined set?": "Yes",
+            "Table Name": "facility",
+            "Values": "32"
+          },
+          {
+            "Column Name": "pos_code",
+            "DVE Run Date": "2024-09-10",
+            "Error Flag": 0,
+            "Part of defined set?": "Yes",
+            "Table Name": "facility",
+            "Values": "33"
+          },
+          {
+            "Column Name": "pos_code",
+            "DVE Run Date": "2024-09-10",
+            "Error Flag": 0,
+            "Part of defined set?": "Yes",
+            "Table Name": "facility",
+            "Values": "34"
+          },
+          {
+            "Column Name": "pos_code",
+            "DVE Run Date": "2024-09-10",
+            "Error Flag": 0,
+            "Part of defined set?": "Yes",
+            "Table Name": "facility",
+            "Values": "41"
+          },
+          {
+            "Column Name": "pos_code",
+            "DVE Run Date": "2024-09-10",
+            "Error Flag": 0,
+            "Part of defined set?": "Yes",
+            "Table Name": "facility",
+            "Values": "42"
+          },
+          {
+            "Column Name": "pos_code",
+            "DVE Run Date": "2024-09-10",
+            "Error Flag": 0,
+            "Part of defined set?": "Yes",
+            "Table Name": "facility",
+            "Values": "49"
+          },
+          {
+            "Column Name": "pos_code",
+            "DVE Run Date": "2024-09-10",
+            "Error Flag": 0,
+            "Part of defined set?": "Yes",
+            "Table Name": "facility",
+            "Values": "50"
+          },
+          {
+            "Column Name": "pos_code",
+            "DVE Run Date": "2024-09-10",
+            "Error Flag": 0,
+            "Part of defined set?": "Yes",
+            "Table Name": "facility",
+            "Values": "51"
+          },
+          {
+            "Column Name": "pos_code",
+            "DVE Run Date": "2024-09-10",
+            "Error Flag": 0,
+            "Part of defined set?": "Yes",
+            "Table Name": "facility",
+            "Values": "53"
+          },
+          {
+            "Column Name": "pos_code",
+            "DVE Run Date": "2024-09-10",
+            "Error Flag": 0,
+            "Part of defined set?": "Yes",
+            "Table Name": "facility",
+            "Values": "55"
+          },
+          {
+            "Column Name": "pos_code",
+            "DVE Run Date": "2024-09-10",
+            "Error Flag": 0,
+            "Part of defined set?": "Yes",
+            "Table Name": "facility",
+            "Values": "57"
+          },
+          {
+            "Column Name": "pos_code",
+            "DVE Run Date": "2024-09-10",
+            "Error Flag": 0,
+            "Part of defined set?": "Yes",
+            "Table Name": "facility",
+            "Values": "58"
+          },
+          {
+            "Column Name": "pos_code",
+            "DVE Run Date": "2024-09-10",
+            "Error Flag": 0,
+            "Part of defined set?": "Yes",
+            "Table Name": "facility",
+            "Values": "60"
+          },
+          {
+            "Column Name": "pos_code",
+            "DVE Run Date": "2024-09-10",
+            "Error Flag": 0,
+            "Part of defined set?": "Yes",
+            "Table Name": "facility",
+            "Values": "61"
+          },
+          {
+            "Column Name": "pos_code",
+            "DVE Run Date": "2024-09-10",
+            "Error Flag": 0,
+            "Part of defined set?": "Yes",
+            "Table Name": "facility",
+            "Values": "62"
+          },
+          {
+            "Column Name": "pos_code",
+            "DVE Run Date": "2024-09-10",
+            "Error Flag": 0,
+            "Part of defined set?": "Yes",
+            "Table Name": "facility",
+            "Values": "65"
+          },
+          {
+            "Column Name": "pos_code",
+            "DVE Run Date": "2024-09-10",
+            "Error Flag": 0,
+            "Part of defined set?": "Yes",
+            "Table Name": "facility",
+            "Values": "71"
+          },
+          {
+            "Column Name": "pos_code",
+            "DVE Run Date": "2024-09-10",
+            "Error Flag": 0,
+            "Part of defined set?": "Yes",
+            "Table Name": "facility",
+            "Values": "72"
+          },
+          {
+            "Column Name": "pos_code",
+            "DVE Run Date": "2024-09-10",
+            "Error Flag": 0,
+            "Part of defined set?": "Yes",
+            "Table Name": "facility",
+            "Values": "81"
+          },
+          {
+            "Column Name": "pos_code",
+            "DVE Run Date": "2024-09-10",
+            "Error Flag": 0,
+            "Part of defined set?": "Yes",
+            "Table Name": "facility",
+            "Values": "99"
+          },
+          {
+            "Column Name": "pos_code",
+            "DVE Run Date": "2024-09-10",
+            "Error Flag": 0,
+            "Part of defined set?": "Yes",
+            "Table Name": "facility",
+            "Values": "A"
+          },
+          {
+            "Column Name": "pos_code",
+            "DVE Run Date": "2024-09-10",
+            "Error Flag": 0,
+            "Part of defined set?": "Yes",
+            "Table Name": "facility",
+            "Values": "N"
+          }
+        ],
+        "Error Flag": 1,
+        "Table Name": "facility",
+        "Test Type": "Universe Check"
+      },
+      {
+        "CheckNo": "TC001.03",
+        "Column Name": "pos_code",
+        "Comparision": "% of null records",
+        "DVE Run Date": "2024-09-10",
+        "Data Source": "LWCC",
+        "Data Type": "tinyint",
+        "Description": [
+          {
+            "Column Name": "pos_code",
+            "DVE Run Date": "2024-09-10",
+            "Data Source": "LWCC",
+            "Error Flag": 0,
+            "Null Rows": 0,
+            "Table Name": "facility",
+            "Total rows": 515
+          }
+        ],
+        "Error Flag": 1,
+        "Table Name": "facility",
+        "Test Type": "Null Check"
+      },
+      {
+        "CheckNo": "TC001.04",
+        "Column Name": "sex",
+        "Comparision": "% change in frequency of values",
+        "DVE Run Date": "2024-09-10",
+        "Data Source": "LWCC",
+        "Data Type": "varchar",
+        "Description": "{\"error\": \"An error occurred: 'str' object has no attribute 'year'\"}",
+        "Error Flag": 1,
+        "Table Name": "patient_data",
+        "Test Type": "Frequency Check"
+      },
+      {
+        "CheckNo": "TC001.05",
+        "Column Name": "sex",
+        "Comparision": "% of null records",
+        "DVE Run Date": "2024-09-10",
+        "Data Source": "LWCC",
+        "Data Type": "varchar",
+        "Description": [
+          {
+            "Column Name": "sex",
+            "DVE Run Date": "2024-09-10",
+            "Data Source": "LWCC",
+            "Error Flag": 0,
+            "Null Rows": 0,
+            "Table Name": "patient_data",
+            "Total rows": 14494
+          }
+        ],
+        "Error Flag": 1,
+        "Table Name": "patient_data",
+        "Test Type": "Null Check"
+      },
+      {
+        "CheckNo": "TC001.06",
+        "Column Name": "sex",
+        "Comparision": "% of values not in the defined universe",
+        "DVE Run Date": "2024-09-10",
+        "Data Source": "LWCC",
+        "Data Type": "varchar",
+        "Description": [
+          {
+            "Column Name": "sex",
+            "DVE Run Date": "2024-09-10",
+            "Error Flag": 1,
+            "Part of defined set?": "No",
+            "Table Name": "patient_data",
+            "Values": "Female"
+          },
+          {
+            "Column Name": "sex",
+            "DVE Run Date": "2024-09-10",
+            "Error Flag": 1,
+            "Part of defined set?": "No",
+            "Table Name": "patient_data",
+            "Values": "Male"
+          },
+          {
+            "Column Name": "sex",
+            "DVE Run Date": "2024-09-10",
+            "Error Flag": 0,
+            "Part of defined set?": "Yes",
+            "Table Name": "patient_data",
+            "Values": "Male"
+          },
+          {
+            "Column Name": "sex",
+            "DVE Run Date": "2024-09-10",
+            "Error Flag": 0,
+            "Part of defined set?": "Yes",
+            "Table Name": "patient_data",
+            "Values": "Female"
+          }
+        ],
+        "Error Flag": 1,
+        "Table Name": "patient_data",
+        "Test Type": "Universe Check"
+      },
+      {
+        "CheckNo": "TC001.07",
+        "Column Name": "race",
+        "Comparision": "% of values not in the defined universe",
+        "DVE Run Date": "2024-09-10",
+        "Data Source": "LWCC",
+        "Data Type": "varchar",
+        "Description": [
+          {
+            "Column Name": "race",
+            "DVE Run Date": "2024-09-10",
+            "Error Flag": 1,
+            "Part of defined set?": "No",
+            "Table Name": "patient_data",
+            "Values": "amer_ind_or_alaska_native"
+          },
+          {
+            "Column Name": "race",
+            "DVE Run Date": "2024-09-10",
+            "Error Flag": 1,
+            "Part of defined set?": "No",
+            "Table Name": "patient_data",
+            "Values": ""
+          },
+          {
+            "Column Name": "race",
+            "DVE Run Date": "2024-09-10",
+            "Error Flag": 1,
+            "Part of defined set?": "No",
+            "Table Name": "patient_data",
+            "Values": "Asian"
+          },
+          {
+            "Column Name": "race",
+            "DVE Run Date": "2024-09-10",
+            "Error Flag": 0,
+            "Part of defined set?": "Yes",
+            "Table Name": "patient_data",
+            "Values": "amer_ind_or_alaska_native"
+          },
+          {
+            "Column Name": "race",
+            "DVE Run Date": "2024-09-10",
+            "Error Flag": 0,
+            "Part of defined set?": "Yes",
+            "Table Name": "patient_data",
+            "Values": "white"
+          },
+          {
+            "Column Name": "race",
+            "DVE Run Date": "2024-09-10",
+            "Error Flag": 0,
+            "Part of defined set?": "Yes",
+            "Table Name": "patient_data",
+            "Values": "black_or_afri_amer"
+          },
+          {
+            "Column Name": "race",
+            "DVE Run Date": "2024-09-10",
+            "Error Flag": 0,
+            "Part of defined set?": "Yes",
+            "Table Name": "patient_data",
+            "Values": "declne_to_specfy"
+          },
+          {
+            "Column Name": "race",
+            "DVE Run Date": "2024-09-10",
+            "Error Flag": 0,
+            "Part of defined set?": "Yes",
+            "Table Name": "patient_data",
+            "Values": "native_hawai_or_pac_island"
+          },
+          {
+            "Column Name": "race",
+            "DVE Run Date": "2024-09-10",
+            "Error Flag": 0,
+            "Part of defined set?": "Yes",
+            "Table Name": "patient_data",
+            "Values": "Asian"
+          }
+        ],
+        "Error Flag": 1,
+        "Table Name": "patient_data",
+        "Test Type": "Universe Check"
+      },
+      {
+        "CheckNo": "TC001.08",
+        "Column Name": "race",
+        "Comparision": "% of null records",
+        "DVE Run Date": "2024-09-10",
+        "Data Source": "LWCC",
+        "Data Type": "varchar",
+        "Description": [
+          {
+            "Column Name": "race",
+            "DVE Run Date": "2024-09-10",
+            "Data Source": "LWCC",
+            "Error Flag": 0,
+            "Null Rows": 0,
+            "Table Name": "patient_data",
+            "Total rows": 14494
+          }
+        ],
+        "Error Flag": 1,
+        "Table Name": "patient_data",
+        "Test Type": "Null Check"
+      },
+      {
+        "CheckNo": "TC001.09",
+        "Column Name": "race",
+        "Comparision": "% change in frequency of values",
+        "DVE Run Date": "2024-09-10",
+        "Data Source": "LWCC",
+        "Data Type": "varchar",
+        "Description": "{\"error\": \"An error occurred: 'str' object has no attribute 'year'\"}",
+        "Error Flag": 1,
+        "Table Name": "patient_data",
+        "Test Type": "Frequency Check"
+      },
+      {
+        "CheckNo": "TC001.10",
+        "Column Name": "ethnicity",
+        "Comparision": "% of values not in the defined universe",
+        "DVE Run Date": "2024-09-10",
+        "Data Source": "LWCC",
+        "Data Type": "varchar",
+        "Description": [
+          {
+            "Column Name": "ethnicity",
+            "DVE Run Date": "2024-09-10",
+            "Error Flag": 1,
+            "Part of defined set?": "No",
+            "Table Name": "patient_data",
+            "Values": "not_hisp_or_latin"
+          },
+          {
+            "Column Name": "ethnicity",
+            "DVE Run Date": "2024-09-10",
+            "Error Flag": 1,
+            "Part of defined set?": "No",
+            "Table Name": "patient_data",
+            "Values": ""
+          },
+          {
+            "Column Name": "ethnicity",
+            "DVE Run Date": "2024-09-10",
+            "Error Flag": 1,
+            "Part of defined set?": "No",
+            "Table Name": "patient_data",
+            "Values": "declne_to_specfy"
+          },
+          {
+            "Column Name": "ethnicity",
+            "DVE Run Date": "2024-09-10",
+            "Error Flag": 0,
+            "Part of defined set?": "Yes",
+            "Table Name": "patient_data",
+            "Values": "hisp_or_latin"
+          },
+          {
+            "Column Name": "ethnicity",
+            "DVE Run Date": "2024-09-10",
+            "Error Flag": 0,
+            "Part of defined set?": "Yes",
+            "Table Name": "patient_data",
+            "Values": "hisp_or_latin"
+          },
+          {
+            "Column Name": "ethnicity",
+            "DVE Run Date": "2024-09-10",
+            "Error Flag": 0,
+            "Part of defined set?": "Yes",
+            "Table Name": "patient_data",
+            "Values": "declne_to_specfy"
+          }
+        ],
+        "Error Flag": 1,
+        "Table Name": "patient_data",
+        "Test Type": "Universe Check"
+      },
+      {
+        "CheckNo": "TC001.11",
+        "Column Name": "ethnicity",
+        "Comparision": "% of null records",
+        "DVE Run Date": "2024-09-10",
+        "Data Source": "LWCC",
+        "Data Type": "varchar",
+        "Description": [
+          {
+            "Column Name": "ethnicity",
+            "DVE Run Date": "2024-09-10",
+            "Data Source": "LWCC",
+            "Error Flag": 0,
+            "Null Rows": 0,
+            "Table Name": "patient_data",
+            "Total rows": 14494
+          }
+        ],
+        "Error Flag": 1,
+        "Table Name": "patient_data",
+        "Test Type": "Null Check"
+      },
+      {
+        "CheckNo": "TC001.12",
+        "Column Name": "ethnicity",
+        "Comparision": "% change in frequency of values",
+        "DVE Run Date": "2024-09-10",
+        "Data Source": "LWCC",
+        "Data Type": "varchar",
+        "Description": "{\"error\": \"An error occurred: 'str' object has no attribute 'year'\"}",
+        "Error Flag": 1,
+        "Table Name": "patient_data",
+        "Test Type": "Frequency Check"
+      },
+      {
+        "CheckNo": "TC001.13",
+        "Column Name": "enrollment_date",
+        "Comparision": "% of null records",
+        "DVE Run Date": "2024-09-10",
+        "Data Source": "LWCC",
+        "Data Type": "date",
+        "Description": [
+          {
+            "Column Name": "enrollment_date",
+            "DVE Run Date": "2024-09-10",
+            "Data Source": "LWCC",
+            "Error Flag": 0,
+            "Null Rows": 0,
+            "Table Name": "patient_data",
+            "Total rows": 14494
+          }
+        ],
+        "Error Flag": 1,
+        "Table Name": "patient_data",
+        "Test Type": "Null Check"
+      },
+      {
+        "CheckNo": "TC001.14",
+        "Column Name": "enrollment_date",
+        "Comparision": "",
+        "DVE Run Date": "2024-09-10",
+        "Data Source": "LWCC",
+        "Data Type": "date",
+        "Description": [],
+        "Error Flag": 0,
+        "Table Name": "patient_data",
+        "Test Type": "Invalid Date Check"
+      },
+      {
+        "CheckNo": "TC001.15",
+        "Column Name": "enrollment_date",
+        "Comparision": "% of dates in future",
+        "DVE Run Date": "2024-09-10",
+        "Data Source": "LWCC",
+        "Data Type": "date",
+        "Description": [],
+        "Error Flag": 0,
+        "Table Name": "patient_data",
+        "Test Type": "Future Date Check"
+      },
+      {
+        "CheckNo": "TC001.16",
+        "Column Name": "DOB",
+        "Comparision": "% of null records",
+        "DVE Run Date": "2024-09-10",
+        "Data Source": "LWCC",
+        "Data Type": "datetime",
+        "Description": [
+          {
+            "Column Name": "DOB",
+            "DVE Run Date": "2024-09-10",
+            "Data Source": "LWCC",
+            "Error Flag": 0,
+            "Null Rows": 0,
+            "Table Name": "patient_data",
+            "Total rows": 14494
+          }
+        ],
+        "Error Flag": 1,
+        "Table Name": "patient_data",
+        "Test Type": "Null Check"
+      },
+      {
+        "CheckNo": "TC001.17",
+        "Column Name": "DOB",
+        "Comparision": "",
+        "DVE Run Date": "2024-09-10",
+        "Data Source": "LWCC",
+        "Data Type": "datetime",
+        "Description": [],
+        "Error Flag": 0,
+        "Table Name": "patient_data",
+        "Test Type": "Invalid Date Check"
+      },
+      {
+        "CheckNo": "TC001.18",
+        "Column Name": "DOB",
+        "Comparision": "% of dates in future",
+        "DVE Run Date": "2024-09-10",
+        "Data Source": "LWCC",
+        "Data Type": "datetime",
+        "Description": [],
+        "Error Flag": 0,
+        "Table Name": "patient_data",
+        "Test Type": "Future Date Check"
+      },
+      {
+        "CheckNo": "TC001.19",
+        "Column Name": "deceased_date",
+        "Comparision": "% of null records",
+        "DVE Run Date": "2024-09-10",
+        "Data Source": "LWCC",
+        "Data Type": "datetime",
+        "Description": [
+          {
+            "Column Name": "deceased_date",
+            "DVE Run Date": "2024-09-10",
+            "Data Source": "LWCC",
+            "Error Flag": 1,
+            "Null Rows": 11840,
+            "Table Name": "patient_data",
+            "Total rows": 14494
+          }
+        ],
+        "Error Flag": 1,
+        "Table Name": "patient_data",
+        "Test Type": "Null Check"
+      },
+      {
+        "CheckNo": "TC001.20",
+        "Column Name": "deceased_date",
+        "Comparision": "",
+        "DVE Run Date": "2024-09-10",
+        "Data Source": "LWCC",
+        "Data Type": "datetime",
+        "Description": [],
+        "Error Flag": 0,
+        "Table Name": "patient_data",
+        "Test Type": "Invalid Date Check"
+      },
+      {
+        "CheckNo": "TC001.21",
+        "Column Name": "deceased_date",
+        "Comparision": "% of dates in future",
+        "DVE Run Date": "2024-09-10",
+        "Data Source": "LWCC",
+        "Data Type": "datetime",
+        "Description": [],
+        "Error Flag": 0,
+        "Table Name": "patient_data",
+        "Test Type": "Future Date Check"
+      },
+      {
+        "CheckNo": "TC001.22",
+        "Column Name": "code",
+        "Comparision": "% of null records",
+        "DVE Run Date": "2024-09-10",
+        "Data Source": "LWCC",
+        "Data Type": "varchar",
+        "Description": [
+          {
+            "Column Name": "code",
+            "DVE Run Date": "2024-09-10",
+            "Data Source": "LWCC",
+            "Error Flag": 0,
+            "Null Rows": 0,
+            "Table Name": "billing",
+            "Total rows": 5627001
+          }
+        ],
+        "Error Flag": 1,
+        "Table Name": "billing",
+        "Test Type": "Null Check"
+      }
+    ],
+    "number_of_errors": 16,
+    "result": "Fail",
+    "test_desc": "Number of columns with inconsistent or incorrect values",
+    "test_id": "TC001",
+    "test_type": "Column Value Consistency Check",
+    "threshold": 0
+  }
+]
