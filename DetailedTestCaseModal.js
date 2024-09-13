@@ -2,7 +2,7 @@ import React from 'react';
 import { Dialog, DialogTitle, DialogContent, DialogActions, Typography, Button, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, IconButton } from '@mui/material';
 import DownloadIcon from '@mui/icons-material/Download';
 import VisibilityIcon from '@mui/icons-material/Visibility'; // Add import for VisibilityIcon
-import DetailedTestCaseModal from '../ModalView/DetailedTestCaseModal';
+// import DetailedTestCaseModal from '../ModalView/DetailedTestCaseModal';
 import { styled } from '@mui/material/styles';
 
 const CustomButton = styled(Button)(({ theme }) => ({
@@ -27,7 +27,7 @@ const CustomTableCell = styled(TableCell)(({ theme, header, icon }) => ({
   cursor: icon ? 'pointer' : 'initial', // Change cursor if icon present
 }));
 
-const TestCaseModal = ({ open, onClose, testCase }) => {
+const DetailedTestCaseModal = ({ open, onClose, testCase }) => {
   const details  = testCase.Description; // Default to empty array if details is undefined 
   // Determine headers based on test_type
   console.log("In Nested Details", testCase)
@@ -35,13 +35,13 @@ const TestCaseModal = ({ open, onClose, testCase }) => {
     console.log(testCase.testType)
     switch (testCase.testType.toLowerCase()) {
       case 'invalid date check':
-        return ['DVE Run Date', 'Table Name', 'Column Name', 'Month', 'Value', 'Count'];
+        return ['DVE Run Date', 'Table Name', 'Column Name', 'Value', 'Count'];
       case 'universe check':
         return ['DVE Run Date', 'Table Name', 'Column Name', 'Value', 'Part of the defined set?', 'Error Flag'];
       case 'future date check':
-        return ['DVE Run Date', 'Table Name', 'Column Name', 'Month', 'Value', 'Count'];
+        return ['DVE Run Date', 'Table Name', 'Column Name', 'Value', 'Count'];
       case 'frequency check':
-        return['DVE Run Date', 'For', 'Column Name', 'Value', 'Current Count', 'Previous Count', 'Error Flag'];
+        return['DVE Run Date', 'Table Name', 'Column Name', 'Value', 'Current Count', 'Previous Count', 'Error Flag'];
       case 'duplicate check':
         return['DVE Run Date', 'Table Name', 'Column Name', 'Value', 'Duplicate Detected?', 'Duplicate Count','Error Flag'];      
       default:
