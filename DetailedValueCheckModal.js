@@ -34,10 +34,10 @@ const DetailedValueCheckModal = ({ open, onClose, testCase }) => {
     switch (testCase.func.toLowerCase()) {
       case 'age check':
         return ['Age groups', 'Current Run', 'Previous Run', 'Error Flag'];
-      case 'universe check':
-        return ['DVE Run Date', 'Table Name', 'Column Name', 'Value', 'Part of the defined set?', 'Error Flag'];
-      case 'dates in future':
-        return ['DVE Run Date', 'Table Name', 'Column Name', 'Value', 'Count'];
+      case 'deceased date':
+        return ['MemberId', 'Comparing Date', 'Primary Date', 'Error Flag'];
+      case 'lab results':
+        return ['LOINC Code', 'Acceptable Min Value', 'Acceptable Max Value', 'Number of Values Outside Min Max Value', 'Error flag'];
       case 'frequency check':
         return['DVE Run Date', 'For', 'Column Name', 'Value', 'Current Count', 'Previous Count', 'Error Flag'];
       case 'duplicate check':
