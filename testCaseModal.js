@@ -1,10 +1,11 @@
 import React from 'react';
 import { Dialog, DialogTitle, DialogContent, DialogActions, Typography, Button, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, IconButton } from '@mui/material';
 import DownloadIcon from '@mui/icons-material/Download';
-import VisibilityIcon from '@mui/icons-material/Visibility'; // Add import for VisibilityIcon
+import VisibilityIcon from '@mui/icons-material/Visibility';
 import DetailedTestCaseModal from '../ModalView/DetailedTestCaseModal';
 import { styled } from '@mui/material/styles';
 
+// Styled components
 const CustomButton = styled(Button)(({ theme }) => ({
   fontFamily: 'Arial Black, Arial, sans-serif',
   fontSize: '1rem',
@@ -14,22 +15,23 @@ const CustomButton = styled(Button)(({ theme }) => ({
   padding: theme.spacing(1, 2),
 }));
 
-const CustomTableCell = styled(TableCell)(({ theme, header, icon }) => ({
+const CustomTableCell = styled(TableCell)(({ theme, header, icon, width }) => ({
   fontFamily: 'Arial Black, Arial, sans-serif',
   fontSize: header ? '1.25rem' : '1rem',
   wordBreak: 'break-word',
-  whiteSpace: 'nowrap',
+  whiteSpace: 'normal',
   backgroundColor: header ? '#e0f7fa' : 'inherit',
   fontWeight: header ? 'bold' : 'normal',
-  display: icon ? 'flex' : 'table-cell', // Adjust display based on icon prop
-  alignItems: 'center', // Center icon vertically
-  justifyContent: icon ? 'center' : 'initial', // Center icon horizontally
-  cursor: icon ? 'pointer' : 'initial', // Change cursor if icon present
+  display: icon ? 'flex' : 'table-cell',
+  alignItems: 'center',
+  justifyContent: icon ? 'center' : 'initial',
+  cursor: icon ? 'pointer' : 'initial',
+  width: width || 'auto', // Apply width if provided
 }));
 
 const TestCaseModal = ({ open, onClose, testCase }) => {
-  const { details = [] } = testCase; // Default to empty array if details is undefined 
-  // Determine headers based on test_type
+  const { details = [] } = testCase;
+
   const getHeaders = () => {
     switch (testCase.testType) {
       case 'Data Availability Check':
@@ -46,17 +48,23 @@ const TestCaseModal = ({ open, onClose, testCase }) => {
   const [selectedTestCase, setSelectedTestCase] = React.useState(null);
   const [openModal, setOpenModal] = React.useState(false);
 
-  // Generate table rows based on details
   const getRows = () => {
-    console.log("details", testCase, details)
     return details.map((row, index) => (
       <TableRow key={index}>
         {getHeaders().map((header, idx) => (
-          <CustomTableCell key={idx} icon={header === 'Details'}>
+          <CustomTableCell
+            key={idx}
+            icon={header === 'Details'}
+            width={header === 'Associated Measure' ? '150px' : 'auto'}
+          >
             {header === 'Details' ? (
-              <IconButton onClick={() => handleViewDetails(row.Description, row.CheckNo, row["Test Type"])} color="primary" disabled={!row.Description}>
-              <VisibilityIcon />
-            </IconButton>
+              <IconButton
+                onClick={() => handleViewDetails(row.Description, row.CheckNo, row["Test Type"])}
+                color="primary"
+                disabled={!row.Description || (row["Test Type"] === 'Null Check') || String(row.Description).trim() === ''}
+              >
+                <VisibilityIcon />
+              </IconButton>
             ) : (
               row[header] !== undefined ? row[header].toString() : ''
             )}
@@ -67,7 +75,6 @@ const TestCaseModal = ({ open, onClose, testCase }) => {
   };
 
   const handleViewDetails = (Description, testId, testType) => {
-    console.log("reache", Description, testId, testType)
     setSelectedTestCase({ Description, testId, testType });
     setOpenModal(true);
   };
@@ -76,7 +83,6 @@ const TestCaseModal = ({ open, onClose, testCase }) => {
     setOpenModal(false);
   };
 
-  // Convert data to CSV format
   const convertToCSV = (data) => {
     if (data.length === 0) return '';
 
@@ -102,57 +108,57 @@ const TestCaseModal = ({ open, onClose, testCase }) => {
 
   return (
     <>
-    <Dialog open={open} onClose={onClose} maxWidth="xl" fullWidth>
-      <DialogTitle sx={{ fontSize: '2rem', fontWeight: 'bold', fontFamily: 'Arial Black, Arial, sans-serif' }}>
-        {testCase.testType} Detailed View For 
-        <Typography 
-          variant="h5" 
-          sx={{ 
-            color: 'primary.main', 
-            fontWeight: 'bold', 
-            display: 'inline', 
-            ml: 1, 
-            fontSize: '2rem'
-          }}
-        >
-          {testCase.testId}
-        </Typography>
-      </DialogTitle>
-      <DialogContent>
-        <TableContainer component={Paper} sx={{ mt: 2, maxHeight: 'calc(100vh - 200px)', overflowX: 'auto' }}>
-          <Table>
-            <TableHead>
-              <TableRow>
-                {getHeaders().map((header, index) => (
-                  <CustomTableCell key={index} header>{header}</CustomTableCell>
-                ))}
-              </TableRow>
-            </TableHead>
-            <TableBody>
-              {getRows()}
-            </TableBody>
-          </Table>
-        </TableContainer>
-      </DialogContent>
-      <DialogActions>
-        <CustomButton
-          variant="contained"
-          color="primary"
-          startIcon={<DownloadIcon />}
-          onClick={handleDownload}
-          sx={{ mr: 1 }}
-        >
-          Download
-        </CustomButton>
-        <CustomButton
-          onClick={onClose}
-          color="primary"
-        >
-          Close
-        </CustomButton>
-      </DialogActions>
-    </Dialog>
-    {selectedTestCase && (
+      <Dialog open={open} onClose={onClose} maxWidth="xl" fullWidth>
+        <DialogTitle sx={{ fontSize: '2rem', fontWeight: 'bold', fontFamily: 'Arial Black, Arial, sans-serif' }}>
+          {testCase.testType} Detailed View For
+          <Typography
+            variant="h5"
+            sx={{
+              color: 'primary.main',
+              fontWeight: 'bold',
+              display: 'inline',
+              ml: 1,
+              fontSize: '2rem'
+            }}
+          >
+            {testCase.testId}
+          </Typography>
+        </DialogTitle>
+        <DialogContent sx={{ overflow: 'hidden' }}>
+          <TableContainer component={Paper} sx={{ mt: 2, maxHeight: 'calc(100vh - 200px)', overflowY: 'auto' }}>
+            <Table>
+              <TableHead>
+                <TableRow>
+                  {getHeaders().map((header, index) => (
+                    <CustomTableCell key={index} header>{header}</CustomTableCell>
+                  ))}
+                </TableRow>
+              </TableHead>
+              <TableBody>
+                {getRows()}
+              </TableBody>
+            </Table>
+          </TableContainer>
+        </DialogContent>
+        <DialogActions>
+          <CustomButton
+            variant="contained"
+            color="primary"
+            startIcon={<DownloadIcon />}
+            onClick={handleDownload}
+            sx={{ mr: 1 }}
+          >
+            Download
+          </CustomButton>
+          <CustomButton
+            onClick={onClose}
+            color="primary"
+          >
+            Close
+          </CustomButton>
+        </DialogActions>
+      </Dialog>
+      {selectedTestCase && (
         <DetailedTestCaseModal
           open={openModal}
           onClose={handleCloseModal}
