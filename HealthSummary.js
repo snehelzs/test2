@@ -13,98 +13,6 @@ import DownloadIcon from '@mui/icons-material/Download';
 import TestCaseModal from '../ModalView/TestCaseModal'; // Adjust the import path as necessary
 import { useSelector, UseSelector } from 'react-redux';
 
-// Sample data (replace this with your actual data source)
-// const data = [
-//   {
-//     testCaseId: 'TC001',
-//     submittedDate: '2024-08-01',
-//     test_type: 'Availability Check',
-//     testCaseDescription: 'Number of required tables not available',
-//     data_source: 'HXG',
-//     ErrorThreshold: '0',
-//     numberOfError: '2',
-//     result: 'Pass',
-//     Details: 'System performed within acceptable limits.'
-//   },
-//   {
-//     testCaseId: 'TC002',
-//     submittedDate: '2024-08-01',
-//     test_type: 'Availability Check',
-//     testCaseDescription: 'Number of required tables not available',
-//     data_source: 'LWCC',
-//     ErrorThreshold: '0',
-//     numberOfError: '4',
-//     result: 'Fail',
-//     Details: 'System performed within acceptable limits.'
-//   },
-//   {
-//     testCaseId: 'TC003',
-//     submittedDate: '2024-08-01',
-//     test_type: 'Availability Check',
-//     testCaseDescription: 'Number of required tables not available',
-//     data_source: 'EMR',
-//     ErrorThreshold: '0',
-//     numberOfError: '0',
-//     result: 'Pass',
-//     Details: 'System performed within acceptable limits.'
-//   },
-//   {
-//     testCaseId: 'TC004',
-//     submittedDate: '2024-08-01',
-//     test_type: 'Availability Check',
-//     testCaseDescription: 'Number of required tables not available',
-//     data_source: 'Other Flat Files',
-//     ErrorThreshold: '0',
-//     numberOfError: '0',
-//     result: 'Pass',
-//     Details: 'System performed within acceptable limits.'
-//   },
-//   {
-//     testCaseId: 'TC005',
-//     submittedDate: '2024-08-01',
-//     test_type: 'Table Schema Check',
-//     testCaseDescription: 'Number of columns not in the expected format',
-//     data_source: 'HXG',
-//     ErrorThreshold: '0',
-//     numberOfError: '2',
-//     result: 'Fail',
-//     Details: 'System performed within acceptable limits.'
-//   },
-//   {
-//     testCaseId: 'TC006',
-//     submittedDate: '2024-08-01',
-//     test_type: 'Table Schema Check',
-//     testCaseDescription: 'Number of columns not in the expected format',
-//     data_source: 'LWCC',
-//     ErrorThreshold: '0',
-//     numberOfError: '0',
-//     result: 'Pass',
-//     Details: 'System performed within acceptable limits.'
-//   },
-//   {
-//     testCaseId: 'TC007',
-//     submittedDate: '2024-08-01',
-//     test_type: 'Column Value Consistency',
-//     testCaseDescription: 'Number of columns with inconsistent or incorrect values',
-//     data_source: 'EMR',
-//     ErrorThreshold: '0',
-//     numberOfError: '0',
-//     result: 'Pass',
-//     Details: 'System performed within acceptable limits.'
-//   },
-//   {
-//     testCaseId: 'TC008',
-//     submittedDate: '2024-08-01',
-//     test_type: 'Column Value Consistency',
-//     testCaseDescription: 'Number of columns with inconsistent or incorrect values',
-//     data_source: 'Other Flat Files',
-//     ErrorThreshold: '0',
-//     numberOfError: '0',
-//     result: 'Pass',
-//     Details: 'System performed within acceptable limits.'
-//   }
-// ];
-
 const Section = styled(Box)(({ theme }) => ({
   backgroundColor: '#f5f5f5',
   borderRadius: theme.shape.borderRadius,
@@ -359,7 +267,7 @@ export default function HealthSummary() {
         <Grid item xs={12}>
           <HeadingBox>
             <Typography variant="h3" sx={{ color: 'green', mb: 0, fontWeight: 'bold' }}>
-              HEDIS Data Health Summary
+              Health Checker Summary
             </Typography>
             <Typography variant="h5" sx={{ color: 'blue', mt: 1 }}>
             This screen offers users a comprehensive overview of test cases statuses, including the total number performed, passed, failed, and those unable to run.
@@ -414,8 +322,9 @@ export default function HealthSummary() {
         label="Test Case Type"
       >
         <StyledMenuItem value=""><em>All</em></StyledMenuItem>
-        <StyledMenuItem value="Availability Check">Availability Check</StyledMenuItem>
-        <StyledMenuItem value="Functional Test">Functional Test</StyledMenuItem>
+        <StyledMenuItem value="Data Availability Check">Data Availability Check</StyledMenuItem>
+        <StyledMenuItem value="Table Schema Check">Table Schema Check</StyledMenuItem>
+        <StyledMenuItem value="Column Value Consistency Check">Column Value Consistency Check</StyledMenuItem>
         {/* Add other test case types */}
       </StyledSelect>
     </FormControl>
