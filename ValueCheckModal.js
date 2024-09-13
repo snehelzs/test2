@@ -32,7 +32,7 @@ const defaultHeaders = ['Test Case ID', 'DVE Run Date', 'Function', 'Test Case D
 const comprehensiveCodesetHeaders = ['DVE Run Date', 'Measure', 'Value Set', 'Code Set', 'Code Value', 'Current Count', 'Previous Count', 'Percentage Change', 'Error'];
 
 const ValueCheckModal = ({ open, onClose, testCase }) => {
-  console.log("In First Modal", testCase)
+  console.log("In First Modal", testCase);
   const { details = [] } = testCase;
   const [selectedTestCase, setSelectedTestCase] = React.useState(null);
   const [openModal, setOpenModal] = React.useState(false);
@@ -44,13 +44,17 @@ const ValueCheckModal = ({ open, onClose, testCase }) => {
   };
 
   const getRows = () => {
-    console.log("get me details", details)
+    console.log("get me details", details);
     return details.map((row, index) => (
       <TableRow key={index}>
         {getHeaders().map((header, idx) => (
           <CustomTableCell key={idx} icon={header === 'Details'}>
             {header === 'Details' ? (
-              <IconButton onClick={() => handleViewDetails(row.Details, row.Function, row["Test Case ID"], row["Test Case Description"])} color="primary" disabled={!row.Details}>
+              <IconButton 
+                onClick={() => handleViewDetails(row.Details, row.Function, row["Test Case ID"], row["Test Case Description"])}
+                color="primary"
+                disabled={!row.Details || String(row.Details).trim() === ''} // Ensure Details is treated as a string and check if it is empty
+              >
                 <VisibilityIcon />
               </IconButton>
             ) : (
@@ -63,6 +67,8 @@ const ValueCheckModal = ({ open, onClose, testCase }) => {
   };
 
   const handleViewDetails = (Description, func, testId, testType) => {
+    // Ensure Description is treated as a string and check if it is not empty
+    if (!Description || String(Description).trim() === '') return; 
     setSelectedTestCase({ Description, func, testId, testType });
     setOpenModal(true);
   };
