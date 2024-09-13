@@ -40,7 +40,7 @@ const dataSourcesOptions = [
     { value: '5', label: 'Unhealthy Alcohol Use Screening and Follow-Up' },
     { value: '6', label: 'Breast Cancer Screening' },
     { value: '7', label: 'Blood Pressure Control for Patients With Diabetes' },
-    { value: '8', label: 'Controlling High Blood Pressure' },
+    { value: '8', label: 'CBP' },
     { value: '9', label: 'Care for Older Adults' },
     { value: '10', label: 'Colorectal Cancer Screening' },
     { value: '11', label: 'Cardiac Rehabilitation' },
