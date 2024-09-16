@@ -1,0 +1,83 @@
+import { databaseNotOpen } from '@azure/msal-browser/dist/error/BrowserAuthErrorCodes';
+import { useMsal } from '@azure/msal-react';
+
+export const fetchApi = async () => {
+    const { instance } = useMsal();
+    const account = instance.getActiveAccount();
+    try {
+        const response = await instance.acquireTokenSilent({
+            scopes: ['api://9f385813-9b34-4ab7-8569-ace008e18ddc/access_as_user'],
+            account: account
+        });
+
+        const apiResponse = await fetch('https://your-backend-api-endpoint/secure-endpoint', {
+            headers: {
+                'Authorization': `Bearer ${response.accessToken}`
+            }
+        });
+
+        const data = await apiResponse.json();
+        console.log(data);
+        return data;
+    } catch (error) {
+        console.error('Failed to fetch API', error);
+        
+     };
+}
+
+    
+
+##### backend Api 
+
+import jwt
+from flask import Flask, request, jsonify
+import requests
+
+app = Flask(__name__)
+
+# Your Azure AD tenant ID and API App ID
+TENANT_ID = 'YOUR_TENANT_ID'
+CLIENT_ID = 'YOUR_API_CLIENT_ID'
+AUTHORITY = f'https://login.microsoftonline.com/{TENANT_ID}'
+AUDIENCE = CLIENT_ID
+JWKS_URL = f'{AUTHORITY}/discovery/v2.0/keys'
+
+# Fetch the JWKS (JSON Web Key Set) from Azure AD
+def get_jwks():
+    response = requests.get(JWKS_URL)
+    response.raise_for_status()
+    return response.json()
+
+jwks = get_jwks()
+
+def validate_token(token):
+    try:
+        payload = jwt.decode(
+            token,
+            jwks,
+            algorithms=['RS256'],
+            audience=AUDIENCE,
+            issuer=AUTHORITY
+        )
+        return payload
+    except jwt.ExpiredSignatureError:
+        return None
+    except jwt.InvalidTokenError:
+        return None
+
+@app.route('/secure-endpoint', methods=['GET'])
+def secure_endpoint():
+    auth_header = request.headers.get('Authorization')
+    if not auth_header or not auth_header.startswith('Bearer '):
+        return jsonify({'error': 'Unauthorized'}), 401
+
+    token = auth_header.split(' ')[1]
+    payload = validate_token(token)
+    if not payload:
+        return jsonify({'error': 'Invalid token'}), 401
+
+    return jsonify({'message': 'Secure data', 'user': payload})
+
+if __name__ == '__main__':
+    app.run()
+
