@@ -1,7 +1,15 @@
-Haan, maine Python mein JWT token validation kiya hai. Azure AD se generate hoke, JWT token ko validate karne ke liye, aapko pyjwt library ka use karna hoga. Yahaan ek basic example hai:
+from flask import Flask, request, jsonify
+import pyjwt  
+from datetime import datetime
+from flask_cors import CORS
 
-```
-import pyjwt
+
+
+app = Flask(__name__)
+CORS(app, resources={r"/*": {"origins": "*"}})
+
+
+
 
 def validate_jwt_token(token):
     try:
@@ -22,17 +30,27 @@ def validate_jwt_token(token):
     
     except pyjwt.InvalidTokenError:
         return False
+    
 
-# Token ko validate karna
-token = "your_jwt_token_here"
-is_valid = validate_jwt_token(token)
 
-if is_valid:
-    print("Token is valid")
-else:
-    print("Token is invalid")
-```
 
-Is example mein, humne pyjwt library ka use kiya hai JWT token ko decode karne ke liye. Phir humne token ki expiration check ki hai. Agar token valid hai, to humne True return kiya hai, nahi to False.
 
-Dhyan rahe ki, aapko apni secret key ko replace karna hoga "your_secret_key_here" se. Aur token ko replace karna hoga "your_jwt_token_here" se.
+@app.route('/api', methods=['GET'])
+def secure_endpoint():
+    auth_header = request.headers.get('Authorization')
+    
+    if not auth_header:
+        return jsonify({"message": "Authorization header missing"}), 401
+
+    token = auth_header.replace("Bearer ", "")
+    
+    if validate_jwt_token(token):
+        return jsonify({"message": "Token is valid", "data": "Your secured data here"})
+    else:
+        return jsonify({"message": "Invalid or expired token"}), 403
+
+
+
+
+if __name__ == '__main__':
+    app.run(debug=True)
