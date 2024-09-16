@@ -28,6 +28,7 @@ export const fetchApi = async () => {
     
 
 ##### backend Api 
+pip install pyjwt requests
 
 import jwt
 from flask import Flask, request, jsonify
