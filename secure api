@@ -82,3 +82,57 @@ def secure_endpoint():
 if __name__ == '__main__':
     app.run()
 
+
+
+
+
+
+
+
+
+// post health checker jwt
+
+
+import { useMsal } from '@azure/msal-react';
+
+const { instance } = useMsal();
+const account = instance.getActiveAccount();
+
+const getToken = async () => {
+    try {
+        const response = await instance.acquireTokenSilent({
+            scopes: ['api://9f385813-9b34-4ab7-8569-ace008e18ddc/access_as_user'],
+            account: account
+        });
+        return response.accessToken;
+    } catch (error) {
+        console.error('Token acquisition failed', error);
+        throw error;
+    }
+};
+
+
+const API_URL = `http://localhost:${process.env.REACT_APP_API_PORT}/health-checker`;
+
+export const postHealthCheckerData = async (dataSources, testCases) => {
+    const token = await getToken();
+    try {
+        const response = await fetch(API_URL, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+            },
+            body: JSON.stringify({ sources:dataSources, functions:testCases }),
+        });
+
+        if (response.ok) {
+            return await response.json();
+        } else {
+            throw new Error('Failed to fetch');
+        }
+    } catch (error) {
+        console.error('API call error:', error);
+        throw error;
+    }
+};
