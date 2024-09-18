@@ -17,7 +17,7 @@ import Backdrop from '@mui/material/Backdrop';
 import { styled, useTheme } from '@mui/material/styles';
 import { useDispatch } from 'react-redux';
 import { setCurrentTab, setValueCheckerResult } from '../../feature/tabSlice';
-import { postValueCheckerData } from '../api/getValueCheck'
+import { postValueCheckerData } from '../api/postValueCheck'
 
 const ContentBox = styled(Box)(({ theme }) => ({
   fontFamily: 'Arial Black, Arial, sans-serif',
@@ -33,14 +33,14 @@ const HeadingBox = styled(Box)(({ theme }) => ({
 }));
 
 const dataSourcesOptions = [
-    { value: '1', label: 'Adults\' Access to Preventive/Ambulatory Health Services' },
+    { value: '1', label: 'Adults Access to Preventive/Ambulatory Health Services' },
     { value: '2', label: 'Acute Hospital Utilization' },
     { value: '3', label: 'Adult Immunization Status' },
     { value: '4', label: 'Antidepressant Medication Management' },
     { value: '5', label: 'Unhealthy Alcohol Use Screening and Follow-Up' },
     { value: '6', label: 'Breast Cancer Screening' },
     { value: '7', label: 'Blood Pressure Control for Patients With Diabetes' },
-    { value: '8', label: 'CBP' },
+    { value: '8', label: 'Controlling High Blood Pressure' },
     { value: '9', label: 'Care for Older Adults' },
     { value: '10', label: 'Colorectal Cancer Screening' },
     { value: '11', label: 'Cardiac Rehabilitation' },
@@ -77,7 +77,7 @@ const dataSourcesOptions = [
 
 const testCasesOptions = [
   { value: '1', label: 'Date Of Birth' },
-  { value: '2', label: 'Encounter Date' },
+  { value: '2', label: 'Admission Date' },
   { value: '3', label: 'Deceased Date' },
   { value: '4', label: 'Date Of Service' },
   { value: '5', label: 'Enrollment End Date & Start Date' },
