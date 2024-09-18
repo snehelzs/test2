@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
@@ -17,7 +17,10 @@ import Backdrop from '@mui/material/Backdrop';
 import { styled, useTheme } from '@mui/material/styles';
 import { useDispatch } from 'react-redux';
 import { setCurrentTab, setHealthCheckerResult } from '../../feature/tabSlice';
-import { postHealthCheckerData } from '../api/postHealthCheck'
+import useAuthToken from '../Hooks/useAuthToken';
+import { LocalizationProvider, DatePicker } from '@mui/x-date-pickers';
+import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
+import TextField from '@mui/material/TextField';
 
 const ContentBox = styled(Box)(({ theme }) => ({
   fontFamily: 'Arial Black, Arial, sans-serif',
@@ -36,24 +39,28 @@ const dataSourcesOptions = [
   { value: '1', label: 'LWCC' },
   { value: '2', label: 'HXG' },
   { value: '3', label: 'ESI' },
-  { value: '4', label: 'Other Flat Files' }
+  { value: '4', label: 'Other Flat Files' },
 ];
 
 const testCasesOptions = [
   { value: '1', label: 'Data Availability Check' },
   { value: '2', label: 'Table Schema Check' },
-  { value: '3', label: 'Column Value Consistency Check' }
+  { value: '3', label: 'Column Value Consistency Check' },
 ];
 
 const Content = () => {
   const [selectedDataSources, setSelectedDataSources] = useState([]);
   const [selectedTestCases, setSelectedTestCases] = useState([]);
+  const [startDate, setStartDate] = useState(null);
+  const [endDate, setEndDate] = useState(null);
   const [notificationOpen, setNotificationOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [loadingText, setLoadingText] = useState('Loading...');
+  const [error, setError] = useState(null);
 
   const theme = useTheme();
   const dispatch = useDispatch();
+  const token = useAuthToken();
 
   const handleDataSourcesChange = (event) => {
     setSelectedDataSources(event.target.value);
@@ -86,7 +93,7 @@ const Content = () => {
       .join(', ');
   };
 
-  const isButtonDisabled = selectedDataSources.length === 0 || selectedTestCases.length === 0;
+  const isButtonDisabled = selectedDataSources.length === 0 || selectedTestCases.length === 0 || !startDate || !endDate;
 
   const handleButtonClick = async () => {
     if (isButtonDisabled) {
@@ -96,17 +103,37 @@ const Content = () => {
       setLoadingText('Submitting your request...');
 
       try {
-        const selectedSources= dataSourcesOptions.filter(option => selectedDataSources.includes(option.value)).map(option => option.label);
-        const selectedTestcase= testCasesOptions.filter(option => selectedTestCases.includes(option.value)).map(option => option.label);
-        const result = await postHealthCheckerData(selectedSources, selectedTestcase);
+        const selectedSources = dataSourcesOptions.filter(option => selectedDataSources.includes(option.value)).map(option => option.label);
+        const selectedTestcase = testCasesOptions.filter(option => selectedTestCases.includes(option.value)).map(option => option.label);
+
+        const response = await fetch(`http://localhost:5000/health-checker`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`,
+          },
+          body: JSON.stringify({
+            sources: selectedSources,
+            functions: selectedTestcase,
+            startDate: startDate ? startDate.toISOString() : null,
+            endDate: endDate ? endDate.toISOString() : null,
+          }),
+        });
+
+        if (!response.ok) {
+          throw new Error('Failed to fetch');
+        }
+
+        const result = await response.json();
         console.log('API Response:', result);
-        dispatch(setHealthCheckerResult(result))
+        dispatch(setHealthCheckerResult(result));
         setLoadingText('Processing complete.');
         setTimeout(() => {
           setIsLoading(false);
           dispatch(setCurrentTab(1));
         }, 1000);
       } catch (error) {
+        setError(error);
         setLoadingText('An error occurred. Please try again.');
         setTimeout(() => {
           setIsLoading(false);
@@ -115,10 +142,15 @@ const Content = () => {
     }
   };
 
-
   const handleNotificationClose = () => {
     setNotificationOpen(false);
   };
+
+  useEffect(() => {
+    if (token) {
+      console.log('Token available:', token);
+    }
+  }, [token]);
 
   return (
     <ContentBox>
@@ -137,12 +169,64 @@ const Content = () => {
           </HeadingBox>
         </Grid>
 
+        {/* Date Selection moved to here */}
+        <Grid item xs={12}>
+          <Box sx={{ border: '1px solid #ddd', padding: 3, borderRadius: 2, backgroundColor: '#fafafa', mb: 3 }}>
+            <Typography variant="h4" sx={{ color: '#0af', fontWeight: 'bold', fontSize: '2rem' }}>
+              Step 1: Date Range Selection
+            </Typography>
+            <Typography sx={{ fontStyle: 'italic', mb: 2, fontSize: '1.5rem' }}>
+              Select the date range for your data check.
+            </Typography>
+            <LocalizationProvider dateAdapter={AdapterDateFns}>
+              <Stack direction="row" spacing={2} sx={{ width: '100%', alignItems: 'center' }}>
+                <DatePicker
+                  label="Start Date"
+                  value={startDate}
+                  onChange={(newValue) => setStartDate(newValue)}
+                  renderInput={(params) => (
+                    <TextField 
+                      {...params} 
+                      variant="outlined" 
+                      fullWidth 
+                      InputLabelProps={{
+                        sx: { fontSize: '1.5rem' }, // Increase label font size
+                      }} 
+                      InputProps={{
+                        sx: { fontSize: '1.5rem' }, // Increase input font size
+                      }}
+                    />
+                  )}
+                />
+                <DatePicker
+                  label="End Date"
+                  value={endDate}
+                  onChange={(newValue) => setEndDate(newValue)}
+                  renderInput={(params) => (
+                    <TextField 
+                      {...params} 
+                      variant="outlined" 
+                      fullWidth 
+                      InputLabelProps={{
+                        sx: { fontSize: '1.5rem' }, // Increase label font size
+                      }} 
+                      InputProps={{
+                        sx: { fontSize: '1.5rem' }, // Increase input font size
+                      }}
+                    />
+                  )}
+                />
+              </Stack>
+            </LocalizationProvider>
+          </Box>
+        </Grid>
+
         <Grid item xs={12}>
           <Grid container spacing={3}>
             <Grid item xs={12} md={6}>
               <Box sx={{ border: '1px solid #ddd', padding: 3, borderRadius: 2, backgroundColor: '#fafafa' }}>
                 <Typography variant="h4" sx={{ color: '#0af', fontWeight: 'bold', fontSize: '2rem' }}>
-                  Step 1: Data Sources Selection
+                  Step 2: Data Sources Selection
                 </Typography>
                 <Typography sx={{ fontStyle: 'italic', mb: 2, fontSize: '1.5rem' }}>
                   Select all the data sources for which you want to check data health.
@@ -151,10 +235,7 @@ const Content = () => {
                   <b>Data Sources</b>
                 </Typography>
                 <FormControl fullWidth>
-                  <InputLabel
-                    id="dataSources-select-label"
-                    sx={{ display: 'none' }}
-                  >
+                  <InputLabel id="dataSources-select-label" sx={{ display: 'none' }}>
                     Multiple Data Sources Selected
                   </InputLabel>
                   <Select
@@ -219,9 +300,7 @@ const Content = () => {
                       borderColor: '#add8e6',
                       '&:hover': {
                         backgroundColor: '#87ceeb',
-                        borderColor: '#87ceeb',
                       },
-                      fontFamily: 'Arial Black, Arial, sans-serif',
                     }}
                   >
                     Select All
@@ -233,17 +312,9 @@ const Content = () => {
                       height: '50px',
                       fontSize: '1.5rem',
                       padding: '0 20px',
-                      backgroundColor: '#add8e6',
-                      color: 'black',
-                      borderColor: '#add8e6',
-                      '&:hover': {
-                        backgroundColor: '#87ceeb',
-                        borderColor: '#87ceeb',
-                      },
-                      fontFamily: 'Arial Black, Arial, sans-serif',
                     }}
                   >
-                    Clear
+                    Clear All
                   </Button>
                 </Stack>
               </Box>
@@ -252,19 +323,16 @@ const Content = () => {
             <Grid item xs={12} md={6}>
               <Box sx={{ border: '1px solid #ddd', padding: 3, borderRadius: 2, backgroundColor: '#fafafa' }}>
                 <Typography variant="h4" sx={{ color: '#0af', fontWeight: 'bold', fontSize: '2rem' }}>
-                  Step 2: Test Cases Selection
+                  Step 3: Test Cases Selection
                 </Typography>
                 <Typography sx={{ fontStyle: 'italic', mb: 2, fontSize: '1.5rem' }}>
-                  Select all the applicable test cases you want to run for the data check.
+                  Select the test cases you want to perform for the selected data sources.
                 </Typography>
                 <Typography variant="body1" sx={{ mb: 2, fontSize: '1.5rem' }}>
                   <b>Test Cases</b>
                 </Typography>
                 <FormControl fullWidth>
-                  <InputLabel
-                    id="testCases-select-label"
-                    sx={{ display: 'none' }}
-                  >
+                  <InputLabel id="testCases-select-label" sx={{ display: 'none' }}>
                     Multiple Test Cases Selected
                   </InputLabel>
                   <Select
@@ -329,9 +397,7 @@ const Content = () => {
                       borderColor: '#add8e6',
                       '&:hover': {
                         backgroundColor: '#87ceeb',
-                        borderColor: '#87ceeb',
                       },
-                      fontFamily: 'Arial Black, Arial, sans-serif',
                     }}
                   >
                     Select All
@@ -343,17 +409,9 @@ const Content = () => {
                       height: '50px',
                       fontSize: '1.5rem',
                       padding: '0 20px',
-                      backgroundColor: '#add8e6',
-                      color: 'black',
-                      borderColor: '#add8e6',
-                      '&:hover': {
-                        backgroundColor: '#87ceeb',
-                        borderColor: '#87ceeb',
-                      },
-                      fontFamily: 'Arial Black, Arial, sans-serif',
                     }}
                   >
-                    Clear
+                    Clear All
                   </Button>
                 </Stack>
               </Box>
@@ -425,21 +483,15 @@ const Content = () => {
           Run DVE
         </Button>
       </Box>
-
-      <Snackbar
-        open={notificationOpen}
-        autoHideDuration={3000}
-        onClose={handleNotificationClose}
-        anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
-      >
-        <Alert onClose={handleNotificationClose} severity="warning" sx={{ width: '100%', fontFamily: 'Arial Black, Arial, sans-serif', fontSize: '1.5rem' }}>
-          Please select both Data Sources and Test Cases before proceeding.
+      <Snackbar open={notificationOpen} autoHideDuration={6000} onClose={handleNotificationClose}>
+        <Alert onClose={handleNotificationClose} severity="warning" sx={{ width: '100%' }}>
+          Please select at least one data source, one test case, and specify a date range!
         </Alert>
       </Snackbar>
 
-      <Backdrop sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }} open={isLoading}>
+      <Backdrop open={isLoading} sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}>
         <CircularProgress color="inherit" />
-        <Typography variant="h6" sx={{ marginLeft: '10px', fontFamily: 'Arial Black, Arial, sans-serif', fontSize: '1.5rem' }}>{loadingText}</Typography>
+        <Typography sx={{ mt: 2 }}>{loadingText}</Typography>
       </Backdrop>
     </ContentBox>
   );
