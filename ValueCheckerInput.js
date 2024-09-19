@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
@@ -17,7 +17,10 @@ import Backdrop from '@mui/material/Backdrop';
 import { styled, useTheme } from '@mui/material/styles';
 import { useDispatch } from 'react-redux';
 import { setCurrentTab, setValueCheckerResult } from '../../feature/tabSlice';
-import { postValueCheckerData } from '../api/postValueCheck'
+import useAuthToken from '../Hooks/useAuthToken';
+import { LocalizationProvider, DatePicker } from '@mui/x-date-pickers';
+import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
+import TextField from '@mui/material/TextField';
 
 const ContentBox = styled(Box)(({ theme }) => ({
   fontFamily: 'Arial Black, Arial, sans-serif',
@@ -32,77 +35,35 @@ const HeadingBox = styled(Box)(({ theme }) => ({
   textAlign: 'left',
 }));
 
-const dataSourcesOptions = [
-    { value: '1', label: 'Adults Access to Preventive/Ambulatory Health Services' },
-    { value: '2', label: 'Acute Hospital Utilization' },
-    { value: '3', label: 'Adult Immunization Status' },
-    { value: '4', label: 'Antidepressant Medication Management' },
-    { value: '5', label: 'Unhealthy Alcohol Use Screening and Follow-Up' },
-    { value: '6', label: 'Breast Cancer Screening' },
-    { value: '7', label: 'Blood Pressure Control for Patients With Diabetes' },
-    { value: '8', label: 'Controlling High Blood Pressure' },
-    { value: '9', label: 'Care for Older Adults' },
-    { value: '10', label: 'Colorectal Cancer Screening' },
-    { value: '11', label: 'Cardiac Rehabilitation' },
-    { value: '12', label: 'Use of High-Risk Medications in Older Adults' },
-    { value: '13', label: 'Potentially Harmful Drug-Disease Interactions in Older Adults' },
-    { value: '14', label: 'Utilization of the PHQ-9 to Monitor Depression Symptoms for Adolescents and Adults' },
-    { value: '15', label: 'Depression Remission or Response for Adolescents and Adults' },
-    { value: '16', label: 'Depression Screening and Follow-Up for Adolescents and Adults' },
-    { value: '17', label: 'Emergency Department Utilization' },
-    { value: '18', label: 'Eye Exam for Patients With Diabetes' },
-    { value: '19', label: 'Follow-Up After Emergency Department Visit for People with Multiple High-Risk Chronic Conditions' },
-    { value: '20', label: 'Follow-Up After Emergency Department Visit for Substance Use' },
-    { value: '21', label: 'Follow-Up After Hospitalization for Mental Illness' },
-    { value: '22', label: 'Follow-Up After Emergency Department Visit for Mental Illness' },
-    { value: '23', label: 'Use of Opioids at High Dosage' },
-    { value: '24', label: 'Hospitalizations Following Skilled Nursing Discharge' },
-    { value: '25', label: 'Hospitalization for Potentially Preventable Complications' },
-    { value: '26', label: 'Initiation and Engagement of Substance Use Disorder Treatment' },
-    { value: '27', label: 'Kidney Health Evaluation for Patients With Diabetes' },
-    { value: '28', label: 'Osteoporosis Management in Women Who Had a Fracture' },
-    { value: '29', label: 'Osteoporosis Screening in Older Women' },
-    { value: '30', label: 'Persistence of Beta-Blocker Treatment After a Heart Attack' },
-    { value: '31', label: 'Pharmacotherapy Management of COPD Exacerbation' },
-    { value: '32', label: 'Plan All-Cause Readmissions' },
-    { value: '33', label: 'Pharmacotherapy for Opioid Use Disorder' },
-    { value: '34', label: 'Non-Recommended PSA-Based Screening in Older Men' },
-    { value: '35', label: 'Adherence to Antipsychotic Medications for Individuals With Schizophrenia' },
-    { value: '36', label: 'Social Need Screening and Intervention' },
-    { value: '37', label: 'Statin Therapy for Patients with Cardiovascular Disease' },
-    { value: '38', label: 'Statin Therapy for Patients with Diabetes' },
-    { value: '39', label: 'Transitions of Care' },
-    { value: '40', label: 'Use of Opioids From Multiple Providers' }
+const measuresOptions = [
+  { value: '1', label: 'LWCC' },
+  { value: '2', label: 'HXG' },
+  { value: '3', label: 'ESI' },
+  { value: '4', label: 'Other Flat Files' },
 ];
 
 const testCasesOptions = [
-  { value: '1', label: 'Date Of Birth' },
-  { value: '2', label: 'Admission Date' },
-  { value: '3', label: 'Deceased Date' },
-  { value: '4', label: 'Date Of Service' },
-  { value: '5', label: 'Enrollment End Date & Start Date' },
-  { value: '6', label: 'Presription or Dispense Date' },
-  { value: '7', label: 'Claims Denied' },
-  { value: '8', label: 'RxClaims Denied' },
-  { value: '9', label: 'Place Of Service(LWCC)' },
-  { value: '10', label: 'Place Of Service (HXG)' },
-  { value: '11', label: 'Hospice' },
-  { value: '12', label: 'Lab Results' },
-  { value: '13', label: 'Comprehensive Code Set' }
+  { value: '1', label: 'Data Availability Check' },
+  { value: '2', label: 'Table Schema Check' },
+  { value: '3', label: 'Column Value Consistency Check' },
 ];
 
 const Content = () => {
-  const [selectedDataSources, setSelectedDataSources] = useState([]);
+  const [selectedMeasures, setSelectedMeasures] = useState([]);
   const [selectedTestCases, setSelectedTestCases] = useState([]);
+  const [startDate, setStartDate] = useState(null);
+  const [endDate, setEndDate] = useState(null);
   const [notificationOpen, setNotificationOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [loadingText, setLoadingText] = useState('Loading...');
+  const [error, setError] = useState(null);
 
   const theme = useTheme();
   const dispatch = useDispatch();
+  const token = useAuthToken();
 
   const handleDataSourcesChange = (event) => {
-    setSelectedDataSources(event.target.value);
+    setSelectedMeasures(event.target.value);
   };
 
   const handleTestCasesChange = (event) => {
@@ -110,7 +71,7 @@ const Content = () => {
   };
 
   const handleSelectAllDataSources = () => {
-    setSelectedDataSources(dataSourcesOptions.map(option => option.value));
+    setSelectedMeasures(measuresOptions.map(option => option.value));
   };
 
   const handleSelectAllTestCases = () => {
@@ -118,7 +79,7 @@ const Content = () => {
   };
 
   const handleClearDataSources = () => {
-    setSelectedDataSources([]);
+    setSelectedMeasures([]);
   };
 
   const handleClearTestCases = () => {
@@ -132,7 +93,7 @@ const Content = () => {
       .join(', ');
   };
 
-  const isButtonDisabled = selectedDataSources.length === 0 || selectedTestCases.length === 0;
+  const isButtonDisabled = selectedMeasures.length === 0 || selectedTestCases.length === 0 || !startDate || !endDate;
 
   const handleButtonClick = async () => {
     if (isButtonDisabled) {
@@ -142,17 +103,37 @@ const Content = () => {
       setLoadingText('Submitting your request...');
 
       try {
-        const selectedSources= dataSourcesOptions.filter(option => selectedDataSources.includes(option.value)).map(option => option.label);
-        const selectedTestcase= testCasesOptions.filter(option => selectedTestCases.includes(option.value)).map(option => option.label);
-        const result = await postValueCheckerData(selectedSources, selectedTestcase);
+        const selectedSources = measuresOptions.filter(option => selectedMeasures.includes(option.value)).map(option => option.label);
+        const selectedTestcase = testCasesOptions.filter(option => selectedTestCases.includes(option.value)).map(option => option.label);
+
+        const response = await fetch(`http://localhost:5000/value-checker`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`,
+          },
+          body: JSON.stringify({
+            sources: selectedSources,
+            functions: selectedTestcase,
+            startDate: startDate ? startDate.toISOString() : null,
+            endDate: endDate ? endDate.toISOString() : null,
+          }),
+        });
+
+        if (!response.ok) {
+          throw new Error('Failed to fetch');
+        }
+
+        const result = await response.json();
         console.log('API Response:', result);
-        dispatch(setValueCheckerResult(result))
+        dispatch(setValueCheckerResult(result));
         setLoadingText('Processing complete.');
         setTimeout(() => {
           setIsLoading(false);
-          dispatch(setCurrentTab(3));
+          dispatch(setCurrentTab(1));
         }, 1000);
       } catch (error) {
+        setError(error);
         setLoadingText('An error occurred. Please try again.');
         setTimeout(() => {
           setIsLoading(false);
@@ -161,10 +142,15 @@ const Content = () => {
     }
   };
 
-
   const handleNotificationClose = () => {
     setNotificationOpen(false);
   };
+
+  useEffect(() => {
+    if (token) {
+      console.log('Token available:', token);
+    }
+  }, [token]);
 
   return (
     <ContentBox>
@@ -172,15 +158,67 @@ const Content = () => {
         <Grid item xs={12}>
           <HeadingBox>
             <Typography variant="h3" sx={{ color: 'green', mb: 1, fontWeight: 'bold', fontSize: '3rem' }}>
-              Value Checker Inputs
+              Data Value Checker Inputs
             </Typography>
             <Typography variant="h5" sx={{ color: 'blue', mb: 1, fontSize: '1.5rem' }}>
-              This screen will help you select the relevant measures and test cases you want to run the DVE on. User gets select one or more options to run the DVE.
+              This screen will help you select the relevant measures and test cases you want to run the DVE on. User gets to selected one or more options to run the DVE.
             </Typography>
             <Typography variant="h5" sx={{ color: 'blue', fontSize: '1.5rem' }}>
-              Please select the following inputs from the drop-down options to configure the DVE.
+              Please select the following inputs from the drop-down options to check for data health.
             </Typography>
           </HeadingBox>
+        </Grid>
+
+        {/* Date Selection moved to here */}
+        <Grid item xs={12}>
+          <Box sx={{ border: '1px solid #ddd', padding: 3, borderRadius: 2, backgroundColor: '#fafafa', mb: 3 }}>
+            <Typography variant="h4" sx={{ color: '#0af', fontWeight: 'bold', fontSize: '2rem' }}>
+              Step 1: Date Range Selection
+            </Typography>
+            <Typography sx={{ fontStyle: 'italic', mb: 2, fontSize: '1.5rem' }}>
+              Select the date range for your data check.
+            </Typography>
+            <LocalizationProvider dateAdapter={AdapterDateFns}>
+              <Stack direction="row" spacing={2} sx={{ width: '100%', alignItems: 'center' }}>
+                <DatePicker
+                  label="Start Date"
+                  value={startDate}
+                  onChange={(newValue) => setStartDate(newValue)}
+                  renderInput={(params) => (
+                    <TextField 
+                      {...params} 
+                      variant="outlined" 
+                      fullWidth 
+                      InputLabelProps={{
+                        sx: { fontSize: '1.5rem' }, // Increase label font size
+                      }} 
+                      InputProps={{
+                        sx: { fontSize: '1.5rem' }, // Increase input font size
+                      }}
+                    />
+                  )}
+                />
+                <DatePicker
+                  label="End Date"
+                  value={endDate}
+                  onChange={(newValue) => setEndDate(newValue)}
+                  renderInput={(params) => (
+                    <TextField 
+                      {...params} 
+                      variant="outlined" 
+                      fullWidth 
+                      InputLabelProps={{
+                        sx: { fontSize: '1.5rem' }, // Increase label font size
+                      }} 
+                      InputProps={{
+                        sx: { fontSize: '1.5rem' }, // Increase input font size
+                      }}
+                    />
+                  )}
+                />
+              </Stack>
+            </LocalizationProvider>
+          </Box>
         </Grid>
 
         <Grid item xs={12}>
@@ -188,28 +226,25 @@ const Content = () => {
             <Grid item xs={12} md={6}>
               <Box sx={{ border: '1px solid #ddd', padding: 3, borderRadius: 2, backgroundColor: '#fafafa' }}>
                 <Typography variant="h4" sx={{ color: '#0af', fontWeight: 'bold', fontSize: '2rem' }}>
-                  Step 1: Measures Selection
+                  Step 2: Measures Selection
                 </Typography>
                 <Typography sx={{ fontStyle: 'italic', mb: 2, fontSize: '1.5rem' }}>
-                  Select all the measures for which you want to run the DVE for.
+                  Select all the measures for which you want to run the DVE.
                 </Typography>
                 <Typography variant="body1" sx={{ mb: 2, fontSize: '1.5rem' }}>
                   <b>Measures</b>
                 </Typography>
                 <FormControl fullWidth>
-                  <InputLabel
-                    id="dataSources-select-label"
-                    sx={{ display: 'none' }}
-                  >
+                  <InputLabel id="dataSources-select-label" sx={{ display: 'none' }}>
                     Multiple Measures Selected
                   </InputLabel>
                   <Select
                     labelId="dataSources-select-label"
                     id="dataSources-select"
                     multiple
-                    value={selectedDataSources}
+                    value={selectedMeasures}
                     onChange={handleDataSourcesChange}
-                    renderValue={(selected) => getSelectedLabels(dataSourcesOptions, selected)}
+                    renderValue={(selected) => getSelectedLabels(measuresOptions, selected)}
                     sx={{
                       backgroundColor: 'yellowgreen',
                       color: 'black',
@@ -224,7 +259,7 @@ const Content = () => {
                     <MenuItem value="" sx={{ fontSize: '1.5rem' }}>
                       <em>Select Measures</em>
                     </MenuItem>
-                    {dataSourcesOptions.map(option => (
+                    {measuresOptions.map(option => (
                       <MenuItem
                         key={option.value}
                         value={option.value}
@@ -241,7 +276,7 @@ const Content = () => {
                         }}
                       >
                         <Checkbox
-                          checked={selectedDataSources.indexOf(option.value) > -1}
+                          checked={selectedMeasures.indexOf(option.value) > -1}
                           sx={{
                             width: '28px',
                             height: '28px',
@@ -265,9 +300,7 @@ const Content = () => {
                       borderColor: '#add8e6',
                       '&:hover': {
                         backgroundColor: '#87ceeb',
-                        borderColor: '#87ceeb',
                       },
-                      fontFamily: 'Arial Black, Arial, sans-serif',
                     }}
                   >
                     Select All
@@ -279,17 +312,9 @@ const Content = () => {
                       height: '50px',
                       fontSize: '1.5rem',
                       padding: '0 20px',
-                      backgroundColor: '#add8e6',
-                      color: 'black',
-                      borderColor: '#add8e6',
-                      '&:hover': {
-                        backgroundColor: '#87ceeb',
-                        borderColor: '#87ceeb',
-                      },
-                      fontFamily: 'Arial Black, Arial, sans-serif',
                     }}
                   >
-                    Clear
+                    Clear All
                   </Button>
                 </Stack>
               </Box>
@@ -298,19 +323,16 @@ const Content = () => {
             <Grid item xs={12} md={6}>
               <Box sx={{ border: '1px solid #ddd', padding: 3, borderRadius: 2, backgroundColor: '#fafafa' }}>
                 <Typography variant="h4" sx={{ color: '#0af', fontWeight: 'bold', fontSize: '2rem' }}>
-                  Step 2: Test Cases Selection
+                  Step 3: Test Cases Selection
                 </Typography>
                 <Typography sx={{ fontStyle: 'italic', mb: 2, fontSize: '1.5rem' }}>
-                  Select all the applicable test cases you want to run for the data check.
+                  Select all the applicable test cases you want to run for the measures selected.
                 </Typography>
                 <Typography variant="body1" sx={{ mb: 2, fontSize: '1.5rem' }}>
                   <b>Test Cases</b>
                 </Typography>
                 <FormControl fullWidth>
-                  <InputLabel
-                    id="testCases-select-label"
-                    sx={{ display: 'none' }}
-                  >
+                  <InputLabel id="testCases-select-label" sx={{ display: 'none' }}>
                     Multiple Test Cases Selected
                   </InputLabel>
                   <Select
@@ -375,9 +397,7 @@ const Content = () => {
                       borderColor: '#add8e6',
                       '&:hover': {
                         backgroundColor: '#87ceeb',
-                        borderColor: '#87ceeb',
                       },
-                      fontFamily: 'Arial Black, Arial, sans-serif',
                     }}
                   >
                     Select All
@@ -389,17 +409,9 @@ const Content = () => {
                       height: '50px',
                       fontSize: '1.5rem',
                       padding: '0 20px',
-                      backgroundColor: '#add8e6',
-                      color: 'black',
-                      borderColor: '#add8e6',
-                      '&:hover': {
-                        backgroundColor: '#87ceeb',
-                        borderColor: '#87ceeb',
-                      },
-                      fontFamily: 'Arial Black, Arial, sans-serif',
                     }}
                   >
-                    Clear
+                    Clear All
                   </Button>
                 </Stack>
               </Box>
@@ -471,21 +483,15 @@ const Content = () => {
           Run DVE
         </Button>
       </Box>
-
-      <Snackbar
-        open={notificationOpen}
-        autoHideDuration={3000}
-        onClose={handleNotificationClose}
-        anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
-      >
-        <Alert onClose={handleNotificationClose} severity="warning" sx={{ width: '100%', fontFamily: 'Arial Black, Arial, sans-serif', fontSize: '1.5rem' }}>
-          Please select both Data Sources and Test Cases before proceeding.
+      <Snackbar open={notificationOpen} autoHideDuration={6000} onClose={handleNotificationClose}>
+        <Alert onClose={handleNotificationClose} severity="warning" sx={{ width: '100%' }}>
+          Please select at least one data source, one test case, and specify a date range!
         </Alert>
       </Snackbar>
 
-      <Backdrop sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }} open={isLoading}>
+      <Backdrop open={isLoading} sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}>
         <CircularProgress color="inherit" />
-        <Typography variant="h6" sx={{ marginLeft: '10px', fontFamily: 'Arial Black, Arial, sans-serif', fontSize: '1.5rem' }}>{loadingText}</Typography>
+        <Typography sx={{ mt: 2 }}>{loadingText}</Typography>
       </Backdrop>
     </ContentBox>
   );
