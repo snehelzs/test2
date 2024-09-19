@@ -13,98 +13,6 @@ import DownloadIcon from '@mui/icons-material/Download';
 import ValueCheckModal from '../ModalView/ValueCheckModal'; // Adjust the import path as necessary
 import { useSelector, UseSelector } from 'react-redux';
 
-// Sample data (replace this with your actual data source)
-// const data = [
-//   {
-//     testCaseId: 'TC001',
-//     submittedDate: '2024-08-01',
-//     test_type: 'Availability Check',
-//     testCaseDescription: 'Number of required tables not available',
-//     data_source: 'HXG',
-//     ErrorThreshold: '0',
-//     numberOfError: '2',
-//     result: 'Pass',
-//     Details: 'System performed within acceptable limits.'
-//   },
-//   {
-//     testCaseId: 'TC002',
-//     submittedDate: '2024-08-01',
-//     test_type: 'Availability Check',
-//     testCaseDescription: 'Number of required tables not available',
-//     data_source: 'LWCC',
-//     ErrorThreshold: '0',
-//     numberOfError: '4',
-//     result: 'Fail',
-//     Details: 'System performed within acceptable limits.'
-//   },
-//   {
-//     testCaseId: 'TC003',
-//     submittedDate: '2024-08-01',
-//     test_type: 'Availability Check',
-//     testCaseDescription: 'Number of required tables not available',
-//     data_source: 'EMR',
-//     ErrorThreshold: '0',
-//     numberOfError: '0',
-//     result: 'Pass',
-//     Details: 'System performed within acceptable limits.'
-//   },
-//   {
-//     testCaseId: 'TC004',
-//     submittedDate: '2024-08-01',
-//     test_type: 'Availability Check',
-//     testCaseDescription: 'Number of required tables not available',
-//     data_source: 'Other Flat Files',
-//     ErrorThreshold: '0',
-//     numberOfError: '0',
-//     result: 'Pass',
-//     Details: 'System performed within acceptable limits.'
-//   },
-//   {
-//     testCaseId: 'TC005',
-//     submittedDate: '2024-08-01',
-//     test_type: 'Table Schema Check',
-//     testCaseDescription: 'Number of columns not in the expected format',
-//     data_source: 'HXG',
-//     ErrorThreshold: '0',
-//     numberOfError: '2',
-//     result: 'Fail',
-//     Details: 'System performed within acceptable limits.'
-//   },
-//   {
-//     testCaseId: 'TC006',
-//     submittedDate: '2024-08-01',
-//     test_type: 'Table Schema Check',
-//     testCaseDescription: 'Number of columns not in the expected format',
-//     data_source: 'LWCC',
-//     ErrorThreshold: '0',
-//     numberOfError: '0',
-//     result: 'Pass',
-//     Details: 'System performed within acceptable limits.'
-//   },
-//   {
-//     testCaseId: 'TC007',
-//     submittedDate: '2024-08-01',
-//     test_type: 'Column Value Consistency',
-//     testCaseDescription: 'Number of columns with inconsistent or incorrect values',
-//     data_source: 'EMR',
-//     ErrorThreshold: '0',
-//     numberOfError: '0',
-//     result: 'Pass',
-//     Details: 'System performed within acceptable limits.'
-//   },
-//   {
-//     testCaseId: 'TC008',
-//     submittedDate: '2024-08-01',
-//     test_type: 'Column Value Consistency',
-//     testCaseDescription: 'Number of columns with inconsistent or incorrect values',
-//     data_source: 'Other Flat Files',
-//     ErrorThreshold: '0',
-//     numberOfError: '0',
-//     result: 'Pass',
-//     Details: 'System performed within acceptable limits.'
-//   }
-// ];
-
 const Section = styled(Box)(({ theme }) => ({
   backgroundColor: '#f5f5f5',
   borderRadius: theme.shape.borderRadius,
@@ -393,7 +301,7 @@ export default function HealthSummary() {
         <FiltersContainer>
   <FilterBox>
     <FormControl fullWidth>
-      <StyledInputLabel>Data Source</StyledInputLabel>
+      <StyledInputLabel>Measure</StyledInputLabel>
       <StyledSelect
         value={dataSourceFilter}
         onChange={handleDataSourceFilterChange}
