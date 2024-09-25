@@ -1,14 +1,14 @@
 [
   {
     "DVE_run_date": "2024-09-09",
-    "data_source": "HXG",
+    "data_source": "SOURCE1",
     "details": [
       {
         "CheckNo": "TC001.01",
         "Column Name": "DateOfBirth",
         "Comparision": "",
         "DVE Run Date": "2024-09-09",
-        "Data Source": "HXG",
+        "Data Source": "SOURCE1",
         "Data Type": "datetime",
         "Description": [],
         "Error Flag": 0,
@@ -20,13 +20,13 @@
         "Column Name": "DateOfBirth",
         "Comparision": "% of null records",
         "DVE Run Date": "2024-09-09",
-        "Data Source": "HXG",
+        "Data Source": "SOURCE1",
         "Data Type": "datetime",
         "Description": [
           {
             "Column Name": "DateOfBirth",
             "DVE Run Date": "2024-09-09",
-            "Data Source": "HXG",
+            "Data Source": "SOURCE1",
             "Error Flag": 0,
             "Null Rows": 0,
             "Table Name": "Member",
@@ -42,7 +42,7 @@
         "Column Name": "DateOfBirth",
         "Comparision": "% of dates in future",
         "DVE Run Date": "2024-09-09",
-        "Data Source": "HXG",
+        "Data Source": "SOURCE1",
         "Data Type": "datetime",
         "Description": [
           {
@@ -25556,7 +25556,7 @@
         "Column Name": "AdmissionDate",
         "Comparision": "",
         "DVE Run Date": "2024-09-09",
-        "Data Source": "HXG",
+        "Data Source": "SOURCE1",
         "Data Type": "datetime",
         "Description": [],
         "Error Flag": 0,
@@ -25568,7 +25568,7 @@
         "Column Name": "DOSTo",
         "Comparision": "",
         "DVE Run Date": "2024-09-09",
-        "Data Source": "HXG",
+        "Data Source": "SOURCE1",
         "Data Type": "datetime",
         "Description": [],
         "Error Flag": 0,
@@ -25580,7 +25580,7 @@
         "Column Name": "DOSFrom",
         "Comparision": "",
         "DVE Run Date": "2024-09-09",
-        "Data Source": "HXG",
+        "Data Source": "SOURCE1",
         "Data Type": "datetime",
         "Description": [],
         "Error Flag": 0,
@@ -25592,7 +25592,7 @@
         "Column Name": "Transaction_Status",
         "Comparision": "% of values not in the defined universe",
         "DVE Run Date": "2024-09-09",
-        "Data Source": "HXG",
+        "Data Source": "SOURCE1",
         "Data Type": "bignit",
         "Description": {
           "error": "Database error: (pyodbc.ProgrammingError) ('42S02', \"[42S02] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'dbo.LHPPharmacyClaimsData'. (208) (SQLExecDirectW)\")\n[SQL: \n                SELECT \n                distinct [Transaction_Status] as out_of_uni_rows\n                FROM dbo.LHPPharmacyClaimsData\n                where  Transaction_Status NOT IN ('[ blank','01','04]') \n            ]\n(Background on this error at: https://sqlalche.me/e/20/f405)"
@@ -25606,13 +25606,13 @@
         "Column Name": "AdmissionDate",
         "Comparision": "% of null records",
         "DVE Run Date": "2024-09-09",
-        "Data Source": "HXG",
+        "Data Source": "SOURCE1",
         "Data Type": "datetime",
         "Description": [
           {
             "Column Name": "AdmissionDate",
             "DVE Run Date": "2024-09-09",
-            "Data Source": "HXG",
+            "Data Source": "SOURCE1",
             "Error Flag": 1,
             "Null Rows": 40744,
             "Table Name": "ClaimInstitutionalDetail",
@@ -25628,7 +25628,7 @@
         "Column Name": "AdmissionDate",
         "Comparision": "% of dates in future",
         "DVE Run Date": "2024-09-09",
-        "Data Source": "HXG",
+        "Data Source": "SOURCE1",
         "Data Type": "datetime",
         "Description": [
           {
@@ -60760,13 +60760,13 @@
         "Column Name": "DOSTo",
         "Comparision": "% of null records",
         "DVE Run Date": "2024-09-09",
-        "Data Source": "HXG",
+        "Data Source": "SOURCE1",
         "Data Type": "datetime",
         "Description": [
           {
             "Column Name": "DOSTo",
             "DVE Run Date": "2024-09-09",
-            "Data Source": "HXG",
+            "Data Source": "SOURCE1",
             "Error Flag": 1,
             "Null Rows": 201,
             "Table Name": "ClaimLineItemDetail",
@@ -60782,7 +60782,7 @@
         "Column Name": "DOSTo",
         "Comparision": "% of dates in future",
         "DVE Run Date": "2024-09-09",
-        "Data Source": "HXG",
+        "Data Source": "SOURCE1",
         "Data Type": "datetime",
         "Description": "{\"error\": \"Database error: (pyodbc.ProgrammingError) ('42S22', \\\"[42S22] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name 'PatientDateofBirth'. (207) (SQLExecDirectW)\\\")\\n[SQL: \\n        WITH base_data AS (\\n            SELECT   [ClaimID], max(DOSTo) as column_name\\n            FROM [dbo].[ClaimLineItemDetail] group by [ClaimID]\\n        ),\\n        check_data AS (\\n            SELECT  [CLaimID], max(PatientDateofBirth) as check_column\\n            FROM [dbo].[ClaimMemberDetail] group by [CLaimID]\\n        ),\\n        inconsistent_members AS (\\n            SELECT distinct(b.[ClaimID]),b.column_name, c.check_column\\n            FROM base_data b\\n            JOIN check_data c ON cast(b.[ClaimID] as nvarchar) = cast(c.[CLaimID] as nvarchar)\\n            WHERE cast(b.column_name as date) < cast(c.check_column as date) \\n            \\n        )\\n        SELECT * from inconsistent_members\\n        ]\\n(Background on this error at: https://sqlalche.me/e/20/f405)\"}",
         "Error Flag": 1,
@@ -60794,13 +60794,13 @@
         "Column Name": "DOSFrom",
         "Comparision": "% of null records",
         "DVE Run Date": "2024-09-09",
-        "Data Source": "HXG",
+        "Data Source": "SOURCE1",
         "Data Type": "datetime",
         "Description": [
           {
             "Column Name": "DOSFrom",
             "DVE Run Date": "2024-09-09",
-            "Data Source": "HXG",
+            "Data Source": "SOURCE1",
             "Error Flag": 0,
             "Null Rows": 0,
             "Table Name": "ClaimLineItemDetail",
@@ -60816,7 +60816,7 @@
         "Column Name": "DOSFrom",
         "Comparision": "% of dates in future",
         "DVE Run Date": "2024-09-09",
-        "Data Source": "HXG",
+        "Data Source": "SOURCE1",
         "Data Type": "datetime",
         "Description": [
           {
@@ -70818,7 +70818,7 @@
         "Column Name": "DOSFrom",
         "Comparision": "% of dates in future",
         "DVE Run Date": "2024-09-09",
-        "Data Source": "HXG",
+        "Data Source": "SOURCE1",
         "Data Type": "datetime",
         "Description": "{\"error\": \"Database error: (pyodbc.ProgrammingError) ('42S22', \\\"[42S22] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name 'PatientDateofBirth'. (207) (SQLExecDirectW)\\\")\\n[SQL: \\n        WITH base_data AS (\\n            SELECT   [ClaimID], max(DOSFrom) as column_name\\n            FROM [dbo].[ClaimLineItemDetail] group by [ClaimID]\\n        ),\\n        check_data AS (\\n            SELECT  [CLaimID], max(PatientDateofBirth) as check_column\\n            FROM [dbo].[ClaimMemberDetail] group by [CLaimID]\\n        ),\\n        inconsistent_members AS (\\n            SELECT distinct(b.[ClaimID]),b.column_name, c.check_column\\n            FROM base_data b\\n            JOIN check_data c ON cast(b.[ClaimID] as nvarchar) = cast(c.[CLaimID] as nvarchar)\\n            WHERE cast(b.column_name as date) < cast(c.check_column as date) \\n            \\n        )\\n        SELECT * from inconsistent_members\\n        ]\\n(Background on this error at: https://sqlalche.me/e/20/f405)\"}",
         "Error Flag": 1,
@@ -70830,7 +70830,7 @@
         "Column Name": "DeathDate",
         "Comparision": "",
         "DVE Run Date": "2024-09-09",
-        "Data Source": "HXG",
+        "Data Source": "SOURCE1",
         "Data Type": "datetime",
         "Description": [],
         "Error Flag": 0,
@@ -70842,7 +70842,7 @@
         "Column Name": "DeathDate",
         "Comparision": "% of dates in future",
         "DVE Run Date": "2024-09-09",
-        "Data Source": "HXG",
+        "Data Source": "SOURCE1",
         "Data Type": "datetime",
         "Description": [],
         "Error Flag": 0,
@@ -70854,7 +70854,7 @@
         "Column Name": "Date_Of_Service1",
         "Comparision": "% of null records",
         "DVE Run Date": "2024-09-09",
-        "Data Source": "HXG",
+        "Data Source": "SOURCE1",
         "Data Type": "varchar",
         "Description": {
           "error": "Database error: (pyodbc.ProgrammingError) ('42S02', \"[42S02] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'dbo.LHPPharmacyClaimsData'. (208) (SQLExecDirectW)\")\n[SQL: \n        SELECT COUNT(*) as total_rows, \n               SUM(CASE WHEN Date_Of_Service1 IS NULL THEN 1 ELSE 0 END) as null_rows \n        FROM dbo.LHPPharmacyClaimsData\n        ]\n(Background on this error at: https://sqlalche.me/e/20/f405)"
@@ -70868,7 +70868,7 @@
         "Column Name": "Date_Of_Service1",
         "Comparision": "",
         "DVE Run Date": "2024-09-09",
-        "Data Source": "HXG",
+        "Data Source": "SOURCE1",
         "Data Type": "varchar",
         "Description": [],
         "Error Flag": 0,
@@ -70880,7 +70880,7 @@
         "Column Name": "Date_Of_Service1",
         "Comparision": "% of dates in future",
         "DVE Run Date": "2024-09-09",
-        "Data Source": "HXG",
+        "Data Source": "SOURCE1",
         "Data Type": "varchar",
         "Description": "{\"error\": \"Database error: (pyodbc.ProgrammingError) ('42S02', \\\"[42S02] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'dbo.LHPPharmacyClaimsData'. (208) (SQLExecDirectW)\\\")\\n[SQL: \\n        WITH base_data AS (\\n            SELECT   [Transaction_ID], max(Date_Of_Service1) as column_name\\n            FROM [dbo].[LHPPharmacyClaimsData] group by [Transaction_ID]\\n        ),\\n        check_data AS (\\n            SELECT  [Transaction_ID], max(Date_Presciption_Written) as check_column\\n            FROM [dbo].[LHPPharmacyClaimsData] group by [Transaction_ID]\\n        ),\\n        inconsistent_members AS (\\n            SELECT distinct(b.[Transaction_ID]),b.column_name, c.check_column\\n            FROM base_data b\\n            JOIN check_data c ON cast(b.[Transaction_ID] as nvarchar) = cast(c.[Transaction_ID] as nvarchar)\\n            WHERE cast(b.column_name as date) < cast(c.check_column as date) \\n            \\n        )\\n        SELECT * from inconsistent_members\\n        ]\\n(Background on this error at: https://sqlalche.me/e/20/f405)\"}",
         "Error Flag": 1,
@@ -70892,7 +70892,7 @@
         "Column Name": "Days_Supply",
         "Comparision": "% of null records",
         "DVE Run Date": "2024-09-09",
-        "Data Source": "HXG",
+        "Data Source": "SOURCE1",
         "Data Type": "varchar",
         "Description": {
           "error": "Database error: (pyodbc.ProgrammingError) ('42S02', \"[42S02] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'dbo.LHPPharmacyClaimsData'. (208) (SQLExecDirectW)\")\n[SQL: \n        SELECT COUNT(*) as total_rows, \n               SUM(CASE WHEN Days_Supply IS NULL THEN 1 ELSE 0 END) as null_rows \n        FROM dbo.LHPPharmacyClaimsData\n        ]\n(Background on this error at: https://sqlalche.me/e/20/f405)"
@@ -70906,13 +70906,13 @@
         "Column Name": "CodeNumber",
         "Comparision": "% of null records",
         "DVE Run Date": "2024-09-09",
-        "Data Source": "HXG",
+        "Data Source": "SOURCE1",
         "Data Type": "varchar",
         "Description": [
           {
             "Column Name": "CodeNumber",
             "DVE Run Date": "2024-09-09",
-            "Data Source": "HXG",
+            "Data Source": "SOURCE1",
             "Error Flag": 0,
             "Null Rows": 0,
             "Table Name": "ClaimCodeDetail",
@@ -70928,13 +70928,13 @@
         "Column Name": "PrincipalProc",
         "Comparision": "% of null records",
         "DVE Run Date": "2024-09-09",
-        "Data Source": "HXG",
+        "Data Source": "SOURCE1",
         "Data Type": "varchar",
         "Description": [
           {
             "Column Name": "PrincipalProc",
             "DVE Run Date": "2024-09-09",
-            "Data Source": "HXG",
+            "Data Source": "SOURCE1",
             "Error Flag": 1,
             "Null Rows": 96261,
             "Table Name": "ClaimInstitutionalDetail",
@@ -70950,13 +70950,13 @@
         "Column Name": "HCPCSorHIPPSCode",
         "Comparision": "% of null records",
         "DVE Run Date": "2024-09-09",
-        "Data Source": "HXG",
+        "Data Source": "SOURCE1",
         "Data Type": "varchar",
         "Description": [
           {
             "Column Name": "HCPCSorHIPPSCode",
             "DVE Run Date": "2024-09-09",
-            "Data Source": "HXG",
+            "Data Source": "SOURCE1",
             "Error Flag": 1,
             "Null Rows": 5235159,
             "Table Name": "ClaimLineItemDetail",
@@ -70972,13 +70972,13 @@
         "Column Name": "RenderingProviderNPI",
         "Comparision": "% of null records",
         "DVE Run Date": "2024-09-09",
-        "Data Source": "HXG",
+        "Data Source": "SOURCE1",
         "Data Type": "varchar",
         "Description": [
           {
             "Column Name": "RenderingProviderNPI",
             "DVE Run Date": "2024-09-09",
-            "Data Source": "HXG",
+            "Data Source": "SOURCE1",
             "Error Flag": 1,
             "Null Rows": 1686888,
             "Table Name": "ClaimLineItemDetail",
@@ -70994,7 +70994,7 @@
         "Column Name": "Pharmacy_NPI",
         "Comparision": "% of null records",
         "DVE Run Date": "2024-09-09",
-        "Data Source": "HXG",
+        "Data Source": "SOURCE1",
         "Data Type": "varchar",
         "Description": {
           "error": "Database error: (pyodbc.ProgrammingError) ('42S02', \"[42S02] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'dbo.LHPPharmacyClaimsData'. (208) (SQLExecDirectW)\")\n[SQL: \n        SELECT COUNT(*) as total_rows, \n               SUM(CASE WHEN Pharmacy_NPI IS NULL THEN 1 ELSE 0 END) as null_rows \n        FROM dbo.LHPPharmacyClaimsData\n        ]\n(Background on this error at: https://sqlalche.me/e/20/f405)"
@@ -71008,7 +71008,7 @@
         "Column Name": "Date_Prescription_Written",
         "Comparision": "% of null records",
         "DVE Run Date": "2024-09-09",
-        "Data Source": "HXG",
+        "Data Source": "SOURCE1",
         "Data Type": "datetime",
         "Description": {
           "error": "Database error: (pyodbc.ProgrammingError) ('42S02', \"[42S02] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'dbo.LHPPharmacyClaimsData'. (208) (SQLExecDirectW)\")\n[SQL: \n        SELECT COUNT(*) as total_rows, \n               SUM(CASE WHEN Date_Prescription_Written IS NULL THEN 1 ELSE 0 END) as null_rows \n        FROM dbo.LHPPharmacyClaimsData\n        ]\n(Background on this error at: https://sqlalche.me/e/20/f405)"
@@ -71022,7 +71022,7 @@
         "Column Name": "Date_Prescription_Written",
         "Comparision": "",
         "DVE Run Date": "2024-09-09",
-        "Data Source": "HXG",
+        "Data Source": "SOURCE1",
         "Data Type": "datetime",
         "Description": [],
         "Error Flag": 0,
@@ -71034,7 +71034,7 @@
         "Column Name": "Date_Prescription_Written",
         "Comparision": "% of dates in future",
         "DVE Run Date": "2024-09-09",
-        "Data Source": "HXG",
+        "Data Source": "SOURCE1",
         "Data Type": "datetime",
         "Description": "{\"error\": \"Database error: (pyodbc.ProgrammingError) ('42S02', \\\"[42S02] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'dbo.LHPPharmacyClaimsData'. (208) (SQLExecDirectW)\\\")\\n[SQL: \\n        WITH base_data AS (\\n            SELECT   [nan], max(Date_Prescription_Written) as column_name\\n            FROM [dbo].[LHPPharmacyClaimsData] group by [nan]\\n        ),\\n        check_data AS (\\n            SELECT  [nan], max(nan) as check_column\\n            FROM [dbo].[nan] group by [nan]\\n        ),\\n        inconsistent_members AS (\\n            SELECT distinct(b.[nan]),b.column_name, c.check_column\\n            FROM base_data b\\n            JOIN check_data c ON cast(b.[nan] as nvarchar) = cast(c.[nan] as nvarchar)\\n            WHERE cast(b.column_name as date) < cast(c.check_column as date) \\n            \\n        )\\n        SELECT * from inconsistent_members\\n        ]\\n(Background on this error at: https://sqlalche.me/e/20/f405)\"}",
         "Error Flag": 1,
@@ -71046,13 +71046,13 @@
         "Column Name": "MemberID",
         "Comparision": "% of null records",
         "DVE Run Date": "2024-09-09",
-        "Data Source": "HXG",
+        "Data Source": "SOURCE1",
         "Data Type": "varchar",
         "Description": [
           {
             "Column Name": "MemberID",
             "DVE Run Date": "2024-09-09",
-            "Data Source": "HXG",
+            "Data Source": "SOURCE1",
             "Error Flag": 0,
             "Null Rows": 0,
             "Table Name": "ClaimMemberDetail",
@@ -71068,7 +71068,7 @@
         "Column Name": "StatusID",
         "Comparision": "% of null records",
         "DVE Run Date": "2024-09-09",
-        "Data Source": "HXG",
+        "Data Source": "SOURCE1",
         "Data Type": "int",
         "Description": {
           "error": "Database error: (pyodbc.ProgrammingError) ('42S02', \"[42S02] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid object name 'dbo.Claims'. (208) (SQLExecDirectW)\")\n[SQL: \n        SELECT COUNT(*) as total_rows, \n               SUM(CASE WHEN StatusID IS NULL THEN 1 ELSE 0 END) as null_rows \n        FROM dbo.Claims\n        ]\n(Background on this error at: https://sqlalche.me/e/20/f405)"
@@ -71082,7 +71082,7 @@
         "Column Name": "PlaceOfService",
         "Comparision": "% of values not in the defined universe",
         "DVE Run Date": "2024-09-09",
-        "Data Source": "HXG",
+        "Data Source": "SOURCE1",
         "Data Type": "char",
         "Description": [
           {
@@ -71495,13 +71495,13 @@
         "Column Name": "PlaceOfService",
         "Comparision": "% of null records",
         "DVE Run Date": "2024-09-09",
-        "Data Source": "HXG",
+        "Data Source": "SOURCE1",
         "Data Type": "char",
         "Description": [
           {
             "Column Name": "PlaceOfService",
             "DVE Run Date": "2024-09-09",
-            "Data Source": "HXG",
+            "Data Source": "SOURCE1",
             "Error Flag": 1,
             "Null Rows": 32,
             "Table Name": "ClaimLineItemDetail",
